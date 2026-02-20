@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marco Curzi | Consulenza Professionale</title>
+  <meta name="description" content="Consulenza professionale per aziende e privati. Sicurezza sul lavoro, verifiche tecniche, soluzioni su misura." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── RESET & BASE ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --clr-dark:    #1a1f2e;
+      --clr-accent:  #b89a5e;
+      --clr-accent2: #d4b87a;
+      --clr-light:   #f7f5f0;
+      --clr-white:   #ffffff;
+      --clr-text:    #3d3d3d;
+      --clr-muted:   #777;
+      --ff-serif:    'Playfair Display', Georgia, serif;
+      --ff-sans:     'Inter', system-ui, sans-serif;
+      --max-w:       1140px;
+      --radius:      4px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--ff-sans); color: var(--clr-text); background: var(--clr-white); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
+      background: rgba(26,31,46,0.97);
+      backdrop-filter: blur(8px);
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(184,154,94,0.2);
+    }
+    nav .nav-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: var(--ff-serif); font-size: 1.3rem; color: var(--clr-white); letter-spacing: 1px; }
+    .logo span { color: var(--clr-accent); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.8); transition: color .2s; }
+    .nav-links a:hover { color: var(--clr-accent); }
+    .nav-cta {
+      background: var(--clr-accent); color: var(--clr-dark);
+      padding: 10px 22px; font-size: 0.82rem; font-weight: 600;
+      letter-spacing: 1px; text-transform: uppercase; border-radius: var(--radius);
+      transition: background .2s;
+    }
+    .nav-cta:hover { background: var(--clr-accent2); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      background: var(--clr-dark);
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding-top: 80px;
+    }
+    #hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(184,154,94,0.12), transparent);
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 640px; }
+    .hero-eyebrow {
+      font-size: 0.78rem; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--clr-accent); margin-bottom: 20px; display: flex; align-items: center; gap: 12px;
+    }
+    .hero-eyebrow::before { content: ''; width: 36px; height: 1px; background: var(--clr-accent); }
+    .hero-content h1 { font-family: var(--ff-serif); font-size: clamp(2.4rem,5vw,3.8rem); color: var(--clr-white); line-height: 1.15; margin-bottom: 24px; }
+    .hero-content h1 em { color: var(--clr-accent); font-style: normal; }
+    .hero-content p { color: rgba(255,255,255,0.65); font-size: 1.05rem; max-width: 480px; margin-bottom: 40px; }
+    .btn-primary {
+      display: inline-block;
+      background: var(--clr-accent); color: var(--clr-dark);
+      padding: 14px 36px; font-size: 0.88rem; font-weight: 600;
+      letter-spacing: 1.5px; text-transform: uppercase; border-radius: var(--radius);
+      transition: background .2s, transform .15s;
+    }
+    .btn-primary:hover { background: var(--clr-accent2); transform: translateY(-2px); }
+    .btn-outline {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,0.3); color: var(--clr-white);
+      padding: 14px 36px; font-size: 0.88rem; font-weight: 500;
+      letter-spacing: 1.5px; text-transform: uppercase; border-radius: var(--radius);
+      transition: border-color .2s, color .2s;
+      margin-left: 16px;
+    }
+    .btn-outline:hover { border-color: var(--clr-accent); color: var(--clr-accent); }
+    .hero-stats {
+      margin-top: 64px; display: flex; gap: 48px;
+      border-top: 1px solid rgba(255,255,255,0.1); padding-top: 36px;
+    }
+    .stat-num { font-family: var(--ff-serif); font-size: 2.2rem; color: var(--clr-accent); }
+    .stat-label { font-size: 0.78rem; letter-spacing: 1px; color: rgba(255,255,255,0.5); text-transform: uppercase; margin-top: 2px; }
+
+    /* ── SEZIONE GENERICA ── */
+    section { padding: 96px 0; }
+    .section-label {
+      font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--clr-accent); margin-bottom: 14px;
+    }
+    .section-title { font-family: var(--ff-serif); font-size: clamp(1.8rem,3.5vw,2.8rem); color: var(--clr-dark); line-height: 1.2; margin-bottom: 20px; }
+    .section-sub { color: var(--clr-muted); font-size: 1rem; max-width: 540px; }
+
+    /* ── SERVIZI ── */
+    #servizi { background: var(--clr-light); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; margin-top: 56px; }
+    .service-card {
+      background: var(--clr-white); padding: 40px 32px; border-radius: var(--radius);
+      border-bottom: 3px solid transparent;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+      transition: border-color .25s, transform .2s;
+    }
+    .service-card:hover { border-bottom-color: var(--clr-accent); transform: translateY(-4px); }
+    .service-icon { font-size: 2rem; margin-bottom: 20px; }
+    .service-card h3 { font-family: var(--ff-serif); font-size: 1.2rem; margin-bottom: 12px; color: var(--clr-dark); }
+    .service-card p { font-size: 0.93rem; color: var(--clr-muted); line-height: 1.7; }
+
+    /* ── CHI SONO ── */
+    #chi-sono .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-top: 60px; }
+    .about-img-wrap {
+      position: relative;
+      background: var(--clr-light);
+      border-radius: var(--radius);
+      aspect-ratio: 4/5;
+      overflow: hidden;
+    }
+    .about-img-wrap::after {
+      content: '';
+      position: absolute; bottom: -16px; right: -16px;
+      width: 60%; height: 60%;
+      border: 2px solid var(--clr-accent);
+      border-radius: var(--radius);
+      z-index: -1;
+    }
+    .about-img-placeholder {
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, #e8e0d0 0%, #d4c9b0 100%);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--clr-accent); font-size: 4rem;
+    }
+    .about-text .section-sub { max-width: 100%; margin-bottom: 28px; }
+    .about-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 36px; }
+    .about-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 0.94rem; }
+    .about-list li::before { content: '✓'; color: var(--clr-accent); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+    .btn-dark {
+      display: inline-block;
+      background: var(--clr-dark); color: var(--clr-white);
+      padding: 14px 36px; font-size: 0.88rem; font-weight: 600;
+      letter-spacing: 1.5px; text-transform: uppercase; border-radius: var(--radius);
+      transition: background .2s;
+    }
+    .btn-dark:hover { background: #2a3148; }
+
+    /* ── TESTIMONIALS ── */
+    #testimonianze { background: var(--clr-dark); }
+    #testimonianze .section-title { color: var(--clr-white); }
+    #testimonianze .section-label { color: var(--clr-accent); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 56px; }
+    .testimonial-card {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+      padding: 36px 32px; border-radius: var(--radius);
+    }
+    .testimonial-card blockquote { font-size: 0.97rem; color: rgba(255,255,255,0.75); line-height: 1.75; margin-bottom: 24px; font-style: italic; }
+    .testimonial-author { font-size: 0.82rem; color: var(--clr-accent); letter-spacing: 1px; text-transform: uppercase; font-weight: 600; }
+
+    /* ── CONTATTI ── */
+    #contatti { background: var(--clr-light); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-top: 56px; align-items: start; }
+    .contact-info { display: flex; flex-direction: column; gap: 28px; }
+    .contact-item { display: flex; gap: 16px; align-items: flex-start; }
+    .contact-item-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+    .contact-item-label { font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--clr-muted); margin-bottom: 4px; }
+    .contact-item-value { font-size: 0.97rem; color: var(--clr-dark); font-weight: 500; }
+    form { display: flex; flex-direction: column; gap: 18px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    form input, form textarea, form select {
+      width: 100%; padding: 13px 16px;
+      border: 1px solid #ddd; border-radius: var(--radius);
+      font-family: var(--ff-sans); font-size: 0.93rem; color: var(--clr-text);
+      background: var(--clr-white); outline: none;
+      transition: border-color .2s;
+    }
+    form input:focus, form textarea:focus, form select:focus { border-color: var(--clr-accent); }
+    form textarea { resize: vertical; min-height: 120px; }
+    form button {
+      background: var(--clr-accent); color: var(--clr-dark);
+      border: none; padding: 14px 32px; font-size: 0.88rem; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase; border-radius: var(--radius);
+      cursor: pointer; align-self: flex-start;
+      transition: background .2s;
+    }
+    form button:hover { background: var(--clr-accent2); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--clr-dark); color: rgba(255,255,255,0.5);
+      padding: 40px 0; text-align: center; font-size: 0.83rem;
+      border-top: 1px solid rgba(184,154,94,0.2);
+    }
+    footer span { color: var(--clr-accent); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      #chi-sono .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero-stats { flex-wrap: wrap; gap: 28px; }
+      .btn-outline { margin-left: 0; margin-top: 12px; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">Marco <span>Curzi</span></div>
+      <ul class="nav-links">
+        <li><a href="#servizi">Servizi</a></li>
+        <li><a href="#chi-sono">Chi sono</a></li>
+        <li><a href="#testimonianze">Testimonianze</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+      </ul>
+      <a href="#contatti" class="nav-cta">Consulenza gratuita</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Consulenza professionale</p>
+        <h1>Soluzioni <em>concrete</em><br />per la tua azienda.</h1>
+        <p>Sicurezza sul lavoro, verifiche tecniche e consulenza strategica. Ti accompagno in ogni fase con competenza e affidabilità.</p>
+        <a href="#contatti" class="btn-primary">Prenota una consulenza</a>
+        <a href="#servizi" class="btn-outline">Scopri i servizi</a>
+        <div class="hero-stats">
+          <div>
+            <div class="stat-num">15+</div>
+            <div class="stat-label">Anni di esperienza</div>
+          </div>
+          <div>
+            <div class="stat-num">300+</div>
+            <div class="stat-label">Clienti soddisfatti</div>
+          </div>
+          <div>
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Conformità garantita</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIZI -->
+  <section id="servizi">
+    <div class="container">
+      <p class="section-label">Cosa offro</p>
+      <h2 class="section-title">Soluzioni per ogni<br />esigenza aziendale.</h2>
+      <p class="section-sub">Un approccio su misura per aziende di ogni dimensione, con focus su sicurezza, conformità e ottimizzazione dei processi.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">⚡</div>
+          <h3>Verifiche Impianti</h3>
+          <p>Verifiche periodiche DPR 462/01 e D.Lgs. 81/08 per impianti elettrici, messa a terra e scariche atmosferiche.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🛡️</div>
+          <h3>Sicurezza sul Lavoro</h3>
+          <p>Consulenza D.Lgs. 81/08: DVR, formazione, RSPP, sopralluoghi e gestione documentale completa.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📊</div>
+          <h3>Consulenza Strategica</h3>
+          <p>Analisi dei processi aziendali, ottimizzazione operativa e supporto decisionale per la crescita del business.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💼</div>
+          <h3>Soluzioni su misura</h3>
+          <p>Ogni azienda è unica. Progettiamo insieme un percorso personalizzato per raggiungere i tuoi obiettivi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHI SONO -->
+  <section id="chi-sono">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-wrap">
+          <!-- Sostituisci con: <img src="foto-profilo.jpg" alt="Marco Curzi" /> -->
+          <div class="about-img-placeholder">👤</div>
+        </div>
+        <div class="about-text">
+          <p class="section-label">Chi sono</p>
+          <h2 class="section-title">Esperienza e<br />affidabilità al tuo fianco.</h2>
+          <p class="section-sub">Mi occupo di consulenza tecnica e sicurezza aziendale da oltre 15 anni. Il mio obiettivo è semplificare la complessità normativa e permetterti di concentrarti sul tuo business.</p>
+          <ul class="about-list">
+            <li>Specializzato in verifiche tecniche e sicurezza sul lavoro</li>
+            <li>Competenze in sviluppo software e automazione aziendale</li>
+            <li>Approccio metodico e orientato al risultato</li>
+            <li>Aggiornamento continuo su normative e best practice</li>
+          </ul>
+          <a href="#contatti" class="btn-dark">Contattami</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIANZE -->
+  <section id="testimonianze">
+    <div class="container">
+      <p class="section-label">Testimonianze</p>
+      <h2 class="section-title">Cosa dicono i clienti.</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <blockquote>"Professionalità e competenza fuori dal comune. Ha gestito tutto l'iter di verifica con puntualità e precisione."</blockquote>
+          <div class="testimonial-author">Mario Rossi — Responsabile Tecnico</div>
+        </div>
+        <div class="testimonial-card">
+          <blockquote>"Finalmente un consulente che spiega le cose in modo chiaro. Abbiamo risolto anni di problemi documentali in poche settimane."</blockquote>
+          <div class="testimonial-author">Laura Bianchi — Direttrice Operativa</div>
+        </div>
+        <div class="testimonial-card">
+          <blockquote>"Supporto eccellente in fase di audit. Ci ha guidato passo dopo passo garantendo piena conformità normativa."</blockquote>
+          <div class="testimonial-author">Giuseppe Verdi — Titolare PMI</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATTI -->
+  <section id="contatti">
+    <div class="container">
+      <p class="section-label">Contatti</p>
+      <h2 class="section-title">Prenota una consulenza<br />gratuita.</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div>
+              <div class="contact-item-label">Sede</div>
+              <div class="contact-item-value">Jesi (AN), The Marches, Italia</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">✉️</div>
+            <div>
+              <div class="contact-item-label">Email</div>
+              <div class="contact-item-value">info@marcocurzi.it</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">🕐</div>
+            <div>
+              <div class="contact-item-label">Disponibilità</div>
+              <div class="contact-item-value">Lun – Ven: 9:00 – 18:00</div>
+            </div>
+          </div>
+        </div>
+        <form action="#" method="POST">
+          <div class="form-row">
+            <input type="text" name="nome" placeholder="Nome" required />
+            <input type="text" name="azienda" placeholder="Azienda" />
+          </div>
+          <input type="email" name="email" placeholder="Email *" required />
+          <input type="tel" name="telefono" placeholder="Telefono" />
+          <textarea name="messaggio" placeholder="Descrivi la tua esigenza..."></textarea>
+          <button type="submit">Invia richiesta →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>© 2026 <span>Marco Curzi</span> — P.IVA xxxxxxxxxx — Jesi (AN), Italia</p>
+    </div>
+  </footer>
+
+</body>
+</html>
