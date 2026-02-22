@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verifiche Impianti ed Attrezzature | Marco Curzi</title>
+  <meta name="description" content="Verifiche periodiche obbligatorie DPR 462/01 e D.Lgs. 81/08: impianti elettrici, messa a terra, scariche atmosferiche e attrezzature di lavoro." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--clr-dark:#1E3535;--clr-teal:#1A7A6E;--clr-mint:#4DC9A0;--clr-sky:#29B8D8;--clr-accent:#F0C96A;--clr-accent2:#f7d98a;--clr-light:#F0F9F8;--clr-white:#ffffff;--clr-text:#2a2a2a;--clr-muted:#6b7a78;--ff:'Poppins',system-ui,sans-serif;--max-w:1140px;--radius:6px}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--ff);color:var(--clr-text);background:var(--clr-white);line-height:1.65;font-weight:400;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
+    nav{position:fixed;top:0;left:0;width:100%;z-index:100;background:rgba(30,53,53,0.97);backdrop-filter:blur(8px);padding:18px 0;border-bottom:1px solid rgba(41,184,216,0.25)}
+    nav .nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-family:var(--ff);font-size:1.2rem;font-weight:700;color:#fff;letter-spacing:.5px;text-transform:uppercase}
+    .logo span{color:var(--clr-accent)}
+    .nav-links{display:flex;gap:28px;list-style:none}
+    .nav-links a{font-size:0.8rem;letter-spacing:.8px;text-transform:uppercase;font-weight:500;color:rgba(255,255,255,0.8);transition:color .2s}
+    .nav-links a:hover{color:var(--clr-accent)}
+    .nav-back{display:inline-flex;align-items:center;gap:6px;font-size:0.78rem;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:rgba(255,255,255,0.7);transition:color .2s}
+    .nav-back::before{content:'←'}
+    .nav-back:hover{color:var(--clr-accent)}
+    .page-hero{min-height:50vh;background:var(--clr-dark);display:flex;align-items:center;padding:120px 0 72px;position:relative;overflow:hidden}
+    .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 80% 50%,rgba(41,184,216,0.11),transparent),radial-gradient(ellipse 40% 50% at 10% 80%,rgba(77,201,160,0.08),transparent)}
+    .page-hero .container{position:relative;z-index:1}
+    .hero-eyebrow{font-size:0.72rem;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;color:var(--clr-accent);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+    .hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--clr-accent)}
+    .accent-bar{width:56px;height:4px;border-radius:2px;margin-bottom:28px}
+    .bar-impianti{background:linear-gradient(90deg,var(--clr-sky),var(--clr-mint))}
+    .page-hero h1{font-size:clamp(1.9rem,4.5vw,3.1rem);font-weight:800;color:#fff;line-height:1.12;letter-spacing:-.5px;margin-bottom:22px;max-width:680px}
+    .page-hero h1 em{color:var(--clr-accent);font-style:normal}
+    .page-hero p{color:rgba(255,255,255,0.63);font-size:1rem;font-weight:300;max-width:540px;line-height:1.8}
+    section{padding:80px 0}
+    .section-label{font-size:0.72rem;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;color:var(--clr-accent);margin-bottom:12px}
+    .section-title{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:var(--clr-dark);line-height:1.18;letter-spacing:-.3px;margin-bottom:18px}
+    .section-sub{color:var(--clr-muted);font-size:0.97rem;max-width:560px;line-height:1.75}
+    #servizi-dettaglio{background:var(--clr-light)}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:48px}
+    .service-card{background:var(--clr-white);padding:32px 26px;border-radius:var(--radius);border-bottom:3px solid transparent;box-shadow:0 2px 16px rgba(0,0,0,.05);transition:border-color .25s,transform .2s}
+    .service-card:hover{border-bottom-color:var(--clr-accent);transform:translateY(-4px)}
+    .service-icon{font-size:1.9rem;margin-bottom:16px}
+    .service-card h3{font-size:1rem;font-weight:600;margin-bottom:10px;color:var(--clr-dark)}
+    .service-card p{font-size:0.87rem;color:var(--clr-muted);line-height:1.75}
+    #processo{background:var(--clr-white)}
+    .process-list{display:flex;flex-direction:column;gap:28px;margin-top:44px;max-width:700px}
+    .process-step{display:flex;gap:24px;align-items:flex-start}
+    .process-num{flex-shrink:0;width:44px;height:44px;border-radius:50%;background:var(--clr-dark);color:var(--clr-accent);font-size:.95rem;font-weight:800;display:flex;align-items:center;justify-content:center}
+    .process-step h4{font-size:.97rem;font-weight:600;color:var(--clr-dark);margin-bottom:5px}
+    .process-step p{font-size:.88rem;color:var(--clr-muted);line-height:1.75}
+    #faq{background:var(--clr-light)}
+    .faq-list{display:flex;flex-direction:column;gap:14px;margin-top:44px;max-width:740px}
+    .faq-item{background:var(--clr-white);border-radius:var(--radius);padding:24px 28px;box-shadow:0 2px 12px rgba(0,0,0,.04);border-left:3px solid var(--clr-accent)}
+    .faq-q{font-size:.95rem;font-weight:600;color:var(--clr-dark);margin-bottom:8px}
+    .faq-a{font-size:.88rem;color:var(--clr-muted);line-height:1.75}
+    #normativa{background:var(--clr-dark);padding:72px 0}
+    #normativa .section-title{color:#fff}
+    .norme-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:44px}
+    .norma-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-left:3px solid var(--clr-accent);border-radius:var(--radius);padding:24px 20px;transition:background .2s,border-left-color .2s}
+    .norma-card:hover{background:rgba(255,255,255,.07);border-left-color:var(--clr-sky)}
+    .norma-tag{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--clr-accent);background:rgba(240,201,106,.12);padding:3px 9px;border-radius:20px;margin-bottom:12px}
+    .norma-card h4{font-size:.94rem;font-weight:600;color:#fff;margin-bottom:7px;line-height:1.4}
+    .norma-card p{font-size:.84rem;color:rgba(255,255,255,.52);line-height:1.7}
+    #cta-finale{background:var(--clr-dark);text-align:center;padding:80px 0}
+    #cta-finale h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;color:#fff;letter-spacing:-.3px;margin-bottom:14px}
+    #cta-finale p{color:rgba(255,255,255,.58);font-size:.97rem;font-weight:300;max-width:480px;margin:0 auto 36px;line-height:1.8}
+    .btn-primary{display:inline-block;background:var(--clr-accent);color:var(--clr-dark);padding:13px 30px;font-size:.8rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-radius:var(--radius);transition:background .2s,transform .15s}
+    .btn-primary:hover{background:var(--clr-accent2);transform:translateY(-2px)}
+    
+    /* ── FOOTER COMPATTO ── */
+    footer { background: var(--clr-dark); border-top: 1px solid rgba(41,184,216,0.15); padding: 40px 0 0; }
+    .footer-inner { display: flex; align-items: flex-start; justify-content: space-between; gap: 40px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.07); flex-wrap: wrap; }
+    .footer-brand { display: flex; flex-direction: column; gap: 6px; min-width: 180px; }
+    .footer-logo { font-size: 1.1rem; font-weight: 700; color: var(--clr-white); text-transform: uppercase; letter-spacing: 0.5px; }
+    .footer-logo span { color: var(--clr-accent); }
+    .footer-tagline { font-size: 0.82rem; color: rgba(255,255,255,0.4); line-height: 1.5; }
+    .footer-social { display: flex; gap: 10px; margin-top: 10px; }
+    .footer-social a { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.55); transition: background .2s, color .2s; }
+    .footer-social a:hover { background: var(--clr-teal); color: var(--clr-white); }
+    .footer-links { display: flex; gap: 48px; flex-wrap: wrap; }
+    .footer-col-title { font-size: 0.68rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--clr-accent); margin-bottom: 12px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul li a { font-size: 0.84rem; color: rgba(255,255,255,0.48); transition: color .2s; }
+    .footer-col ul li a:hover { color: var(--clr-white); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; font-size: 0.78rem; color: rgba(255,255,255,0.28); flex-wrap: wrap; gap: 6px; }
+    .footer-bottom span { color: var(--clr-accent); }
+    @media (max-width: 768px) { .footer-inner { flex-direction: column; gap: 28px; } .footer-links { gap: 28px; } .footer-bottom { flex-direction: column; text-align: center; } }
+
+    @media(max-width:768px){.nav-links{display:none}.process-step{flex-direction:column;gap:10px}}
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <div class="logo"><a href="index.html" style="color:inherit">Marco <span>Curzi</span></a></div>
+      <ul class="nav-links">
+        <li><a href="index.html#servizi">Servizi</a></li>
+        <li><a href="index.html#settori">Settori</a></li>
+        <li><a href="index.html#normativa">Normativa</a></li>
+        <li><a href="index.html#contatti">Contatti</a></li>
+      </ul>
+      <a href="index.html" class="nav-back">Home</a>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="hero-eyebrow">Verifiche tecniche obbligatorie</p>
+      <div class="accent-bar bar-impianti"></div>
+      <h1>Verifiche Impianti ed <em>Attrezzature di Lavoro.</em></h1>
+      <p>Garantiamo la conformità normativa dei tuoi impianti con verifiche periodiche certificate ai sensi del DPR 462/01 e D.Lgs. 81/08. Competenza tecnica, puntualità e documentazione completa.</p>
+    </div>
+  </section>
+
+  <section id="servizi-dettaglio">
+    <div class="container">
+      <p class="section-label">Cosa verifichiamo</p>
+      <h2 class="section-title">Tutte le verifiche di cui hai bisogno.</h2>
+      <p class="section-sub">Dal sopralluogo iniziale al rilascio della documentazione ufficiale, gestiamo l'intero iter per impianti elettrici, messa a terra e attrezzature soggette a controllo periodico.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">⚡</div>
+          <h3>Impianti Elettrici</h3><p>Verifica periodica degli impianti elettrici nei luoghi di lavoro: conformità, stato di conservazione e idoneità degli impianti esistenti.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🌍</div>
+          <h3>Messa a Terra</h3><p>Verifica biennale o quinquennale degli impianti di messa a terra ai sensi del DPR 462/01, con comunicazione agli enti competenti (INAIL, ASL).</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">⛈️</div>
+          <h3>Scariche Atmosferiche</h3><p>Verifica degli impianti di protezione contro le scariche atmosferiche. Valutazione del rischio e conformità normativa.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔧</div>
+          <h3>Attrezzature di Lavoro</h3><p>Verifiche periodiche di gru, sollevatori, autoscale, recipienti a pressione e altre attrezzature di cui all'Allegato VII D.Lgs. 81/08.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📋</div>
+          <h3>Gestione Documentale</h3><p>Verbali di verifica, libretto macchina, comunicazioni agli enti e scadenziari personalizzati.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔔</div>
+          <h3>Scadenziario Personalizzato</h3><p>Reminder automatici sulle scadenze di verifica: non rischi sanzioni per mancata verifica o documentazione non aggiornata.</p>
+        </div></div>
+    </div>
+  </section>
+
+  <section id="processo">
+    <div class="container">
+      <p class="section-label">Come lavoriamo</p>
+      <h2 class="section-title">Il nostro processo operativo.</h2>
+      <div class="process-list">
+          <div class="process-step">
+            <div class="process-num">01</div>
+            <div><h4>Richiesta e sopralluogo preliminare</h4><p>Raccogliamo informazioni sugli impianti presenti. Se necessario, effettuiamo un sopralluogo gratuito per pianificare le attività.</p></div>
+          </div>
+          <div class="process-step">
+            <div class="process-num">02</div>
+            <div><h4>Programmazione delle verifiche</h4><p>Stabiliamo un calendario compatibile con la tua attività, minimizzando le interruzioni operative.</p></div>
+          </div>
+          <div class="process-step">
+            <div class="process-num">03</div>
+            <div><h4>Esecuzione della verifica</h4><p>Tecnici qualificati eseguono le verifiche con strumentazione certificata secondo le norme tecniche vigenti.</p></div>
+          </div>
+          <div class="process-step">
+            <div class="process-num">04</div>
+            <div><h4>Rilascio documentazione</h4><p>Consegniamo verbale di verifica, relazioni tecniche e gestiamo le comunicazioni agli enti (INAIL, ASL, VVF).</p></div>
+          </div>
+          <div class="process-step">
+            <div class="process-num">05</div>
+            <div><h4>Gestione scadenze future</h4><p>Inseriamo le scadenze nel sistema di monitoraggio: ti avvisiamo in anticipo per ogni prossima verifica.</p></div>
+          </div></div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="container">
+      <p class="section-label">Domande frequenti</p>
+      <h2 class="section-title">Hai dei dubbi?<br />Rispondo subito.</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">Con quale frequenza vanno eseguite le verifiche di messa a terra?</div>
+          <div class="faq-a">Ogni 2 anni per luoghi con pericolo di esplosione, cantieri e locali medici; ogni 5 anni per tutti gli altri luoghi di lavoro (art. 4 DPR 462/01).</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Chi può eseguire le verifiche periodiche?</div>
+          <div class="faq-a">Organismi Notificati riconosciuti dal Ministero o, in alternativa, tecnici ASL/ARPA. Coordiniamo l'intero iter per tuo conto.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Cosa succede se non eseguo la verifica entro la scadenza?</div>
+          <div class="faq-a">Sanzioni amministrative e penali a carico del datore di lavoro ai sensi del D.Lgs. 81/08 e DPR 462/01. Il nostro scadenziario ti protegge da questi rischi.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Le verifiche si applicano anche alle piccole imprese?</div>
+          <div class="faq-a">Sì. L'obbligo vale per tutte le imprese con dipendenti, indipendentemente dalla dimensione, purché presenti impianti o attrezzature soggetti a controllo.</div>
+        </div></div>
+    </div>
+  </section>
+
+  
+  <!-- NORMATIVA -->
+  <section id="normativa" style="background:var(--clr-dark);padding:72px 0;">
+    <div class="container">
+      <p class="section-label">Quadro normativo</p>
+      <h2 class="section-title" style="color:#fff;">Normative di riferimento.</h2>
+      <div class="norme-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:44px;">
+        <div class="norma-card"><span class="norma-tag">Impianti</span><h4>DPR 462/01</h4><p>Verifica periodica impianti elettrici, messa a terra e scariche atmosferiche.</p></div>
+        <div class="norma-card"><span class="norma-tag">Sicurezza</span><h4>D.Lgs. 81/08</h4><p>Testo Unico: DVR, RSPP, formazione e misure di prevenzione obbligatorie.</p></div>
+        <div class="norma-card"><span class="norma-tag">Attrezzature</span><h4>All. VII — D.Lgs. 81/08</h4><p>Verifiche periodiche obbligatorie: gru, sollevatori, recipienti a pressione.</p></div>
+        <div class="norma-card"><span class="norma-tag">Elettrico</span><h4>CEI 64-8 / CEI 11-27</h4><p>Impianti elettrici BT e lavori in sicurezza secondo norme CEI.</p></div>
+        <div class="norma-card"><span class="norma-tag">Formazione</span><h4>Accordo Stato-Regioni</h4><p>Formazione obbligatoria lavoratori, preposti e dirigenti.</p></div>
+        <div class="norma-card"><span class="norma-tag">Antincendio</span><h4>D.M. 2 Set. 2021</h4><p>Codice Prevenzione Incendi: valutazione rischio e piani di emergenza.</p></div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="cta-finale">
+    <div class="container">
+      <h2>Hai impianti da verificare?</h2>
+      <p>Contattami per un preventivo senza impegno. Valutiamo insieme le scadenze e organizziamo le verifiche senza interrompere la tua attività.</p>
+      <a href="index.html#contatti" class="btn-primary">Richiedi una consulenza gratuita</a>
+    </div>
+  </section>
+
+    <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo"><a href="index.html" style="color:inherit;text-decoration:none;">Marco <span>Curzi</span></a></div>
+          <div class="footer-tagline">Consulenza tecnica e sicurezza aziendale.<br />Jesi (AN) — Marche, Italia</div>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/in/marco-curzi-sales" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452H17.21v-5.569c0-1.328-.027-3.037-1.852-3.037-1.854 0-2.137 1.446-2.137 2.941v5.665H9.982V9h3.12v1.561h.044c.435-.822 1.495-1.689 3.078-1.689 3.292 0 3.899 2.168 3.899 4.987v6.593zM5.337 7.433a1.81 1.81 0 1 1 0-3.621 1.81 1.81 0 0 1 0 3.621zM6.956 20.452H3.717V9h3.239v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.222 0z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <div class="footer-col-title">Settori</div>
+            <ul>
+              <li><a href="verifiche-impianti.html">Verifiche Impianti</a></li>
+              <li><a href="sicurezza-lavoro.html">Sicurezza sul Lavoro</a></li>
+              <li><a href="consulenza-strategica.html">Consulenza Strategica</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Navigazione</div>
+            <ul>
+              <li><a href="index.html#servizi">Servizi</a></li>
+              <li><a href="index.html#chi-sono">Chi sono</a></li>
+              <li><a href="index.html#normativa">Normativa</a></li>
+              <li><a href="index.html#contatti">Contatti</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Legale</div>
+            <ul>
+              <li><a href="privacy-policy.html">Privacy Policy</a></li>
+              <li><a href="cookie-policy.html">Cookie Policy</a></li>
+            </ul>
+            <div style="font-size:0.75rem;color:rgba(255,255,255,0.25);margin-top:12px;">P.IVA 01234567890</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 <span>Marco Curzi</span>. Tutti i diritti riservati.</p>
+        <p><a href="privacy-policy.html" style="color:rgba(255,255,255,0.28);">Privacy</a> &nbsp;·&nbsp; <a href="cookie-policy.html" style="color:rgba(255,255,255,0.28);">Cookie</a></p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
