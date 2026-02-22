@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Marco Curzi | Consulenza Professionale</title>
+  <title>Marco Curzi | Verifiche Impianti e Sicurezza sul Lavoro — Fano (PU)</title>
   <meta name="description" content="Consulenza professionale per aziende e privati. Sicurezza sul lavoro, verifiche tecniche, soluzioni su misura." />
 
   <!-- Google Fonts -->
@@ -122,8 +122,8 @@
     }
     .service-card:hover { border-bottom-color: var(--clr-accent); transform: translateY(-4px); }
     .service-icon { font-size: 2rem; margin-bottom: 20px; }
-    .service-card h3 { font-family: var(--ff-sans); font-size: 1.05rem; font-weight: 600; margin-bottom: 12px; color: var(--clr-dark); letter-spacing: -0.1px; }
-    .service-card p { font-size: 0.9rem; color: var(--clr-muted); line-height: 1.75; font-weight: 400; }
+    .service-card h3 { font-family: var(--ff-sans); font-size: 1.05rem; font-weight: 600; margin-bottom: 12px; color: var(--clr-dark); }
+    .service-card p { font-size: 0.9rem; color: var(--clr-muted); line-height: 1.75; }
 
     /* ── CHI SONO ── */
     #chi-sono .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-top: 60px; }
@@ -201,7 +201,21 @@
     }
     form button:hover { background: var(--clr-accent2); }
 
+    /* ── FOOTER ── */
+    footer {
+      background: var(--clr-dark); color: rgba(255,255,255,0.5);
+      padding: 40px 0; text-align: center; font-size: 0.83rem;
+      border-top: 1px solid rgba(41,184,216,0.2);
+    }
+    footer span { color: var(--clr-accent); }
+
     
+    /* ── PILLOLE SERVIZI ── */
+    .pillole-grid { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+    .pillola { display: inline-flex; align-items: center; gap: 10px; background: var(--clr-white); border: 1.5px solid #d8eeea; border-radius: 50px; padding: 10px 20px; font-size: 0.88rem; font-weight: 500; color: var(--clr-dark); transition: border-color .2s, box-shadow .2s; }
+    .pillola:hover { border-color: var(--clr-sky); box-shadow: 0 2px 12px rgba(41,184,216,0.12); }
+    .pillola-icon { font-size: 1rem; line-height: 1; }
+
     /* ── SETTORI ── */
     #settori { background: var(--clr-white); }
     .settori-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; margin-top: 56px; }
@@ -209,7 +223,7 @@
     .settore-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
     .settore-card.card-impianti::before  { background: linear-gradient(90deg, var(--clr-sky), var(--clr-mint)); }
     .settore-card.card-sicurezza::before { background: linear-gradient(90deg, var(--clr-mint), var(--clr-teal)); }
-    .settore-card.card-consulenza::before{ background: linear-gradient(90deg, var(--clr-accent), var(--clr-sky)); }
+    .settore-card.card-consulenza::before { background: linear-gradient(90deg, var(--clr-accent), var(--clr-sky)); }
     .settore-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(30,53,53,0.18); }
     .settore-card-icon { font-size: 2.4rem; line-height: 1; }
     .settore-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--clr-white); letter-spacing: -0.2px; line-height: 1.3; }
@@ -276,16 +290,9 @@
     .footer-bottom a { color: rgba(255,255,255,0.28); transition: color .2s; }
     .footer-bottom a:hover { color: rgba(255,255,255,0.6); }
 
-    /* ── FOOTER ── */
-    footer {
-      background: var(--clr-dark); color: rgba(255,255,255,0.5);
-      padding: 40px 0; text-align: center; font-size: 0.83rem;
-      border-top: 1px solid rgba(41,184,216,0.2);
-    }
-    footer span { color: var(--clr-accent); }
-
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
+      .pillole-grid { gap: 8px; }
       .footer-inner { flex-direction: column; gap: 28px; }
       .footer-links { gap: 28px; }
       .footer-bottom { flex-direction: column; text-align: center; }
@@ -346,31 +353,22 @@
   </section>
 
   <!-- SERVIZI -->
-  <section id="servizi">
+  <section id="servizi" style="background:var(--clr-light);padding:56px 0;">
     <div class="container">
-      <p class="section-label">Cosa offro</p>
-      <h2 class="section-title">Soluzioni per ogni<br />esigenza aziendale.</h2>
-      <p class="section-sub">Un approccio su misura per aziende di ogni dimensione, con focus su sicurezza, conformità e ottimizzazione dei processi.</p>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">⚡</div>
-          <h3>Verifiche Impianti</h3>
-          <p>Verifiche periodiche DPR 462/01 e D.Lgs. 81/08 per impianti elettrici, messa a terra e scariche atmosferiche.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🛡️</div>
-          <h3>Sicurezza sul Lavoro</h3>
-          <p>Consulenza D.Lgs. 81/08: DVR, formazione, RSPP, sopralluoghi e gestione documentale completa.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">📊</div>
-          <h3>Consulenza Strategica</h3>
-          <p>Analisi dei processi aziendali, ottimizzazione operativa e supporto decisionale per la crescita del business.</p>
-        </div>
+      <p class="section-label">Cosa facciamo</p>
+      <h2 class="section-title">Le nostre competenze<br />in sintesi.</h2>
+      <div class="pillole-grid">
+        <div class="pillola"><span class="pillola-icon">⚡</span><span>Verifiche impianti elettrici</span></div>
+        <div class="pillola"><span class="pillola-icon">🌍</span><span>Messa a terra e scariche atmosferiche</span></div>
+        <div class="pillola"><span class="pillola-icon">🔧</span><span>Attrezzature di lavoro (All. VII)</span></div>
+        <div class="pillola"><span class="pillola-icon">📄</span><span>DVR e valutazione rischi</span></div>
+        <div class="pillola"><span class="pillola-icon">🎓</span><span>Formazione obbligatoria</span></div>
+        <div class="pillola"><span class="pillola-icon">👷</span><span>RSPP esterno</span></div>
+        <div class="pillola"><span class="pillola-icon">📈</span><span>Ottimizzazione processi aziendali</span></div>
+        <div class="pillola"><span class="pillola-icon">💻</span><span>Digitalizzazione e automazione</span></div>
       </div>
     </div>
   </section>
-
 
   <!-- SETTORI -->
   <section id="settori">
@@ -406,7 +404,7 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-img-wrap">
-          <img src="foto-profilo.jpg" alt="Marco Curzi — Consulente tecnico" />
+          <img src="foto-profilo.jpg" alt="Marco Curzi" />
         </div>
         <div class="about-text">
           <p class="section-label">Chi sono</p>
@@ -446,7 +444,6 @@
     </div>
   </section>
 
-
   <!-- NORMATIVA -->
   <section id="normativa">
     <div class="container">
@@ -473,7 +470,7 @@
         <div class="contact-info">
           <div class="contact-item">
             <div class="contact-item-icon">📍</div>
-            <div><div class="contact-item-label">Sede operativa</div><div class="contact-item-value">Jesi (AN) — Marche, Italia</div></div>
+            <div><div class="contact-item-label">Sede operativa</div><div class="contact-item-value">Fano (PU) — Marche, Italia</div></div>
           </div>
           <div class="contact-item">
             <div class="contact-item-icon">✉️</div>
@@ -526,12 +523,12 @@
     </div>
   </section>
 
-    <footer>
+  <footer>
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">
           <div class="footer-logo">Marco <span>Curzi</span></div>
-          <div class="footer-tagline">Consulenza tecnica e sicurezza aziendale.<br />Jesi (AN) — Marche, Italia</div>
+          <div class="footer-tagline">Consulenza tecnica e sicurezza aziendale.<br />Fano (PU) — Marche, Italia</div>
           <div class="footer-social">
             <a href="https://www.linkedin.com/in/marco-curzi-sales" target="_blank" rel="noopener" aria-label="LinkedIn">
               <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452H17.21v-5.569c0-1.328-.027-3.037-1.852-3.037-1.854 0-2.137 1.446-2.137 2.941v5.665H9.982V9h3.12v1.561h.044c.435-.822 1.495-1.689 3.078-1.689 3.292 0 3.899 2.168 3.899 4.987v6.593zM5.337 7.433a1.81 1.81 0 1 1 0-3.621 1.81 1.81 0 0 1 0 3.621zM6.956 20.452H3.717V9h3.239v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.222 0z"/></svg>
