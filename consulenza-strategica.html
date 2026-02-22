@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consulenza Strategica | Marco Curzi</title>
+  <meta name="description" content="Consulenza strategica per aziende: analisi dei processi, ottimizzazione operativa, sviluppo digitale e supporto decisionale per la crescita del business." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --clr-dark:    #1E3535;
+      --clr-teal:    #1A7A6E;
+      --clr-mint:    #4DC9A0;
+      --clr-sky:     #29B8D8;
+      --clr-accent:  #F0C96A;
+      --clr-accent2: #f7d98a;
+      --clr-light:   #F0F9F8;
+      --clr-white:   #ffffff;
+      --clr-text:    #2a2a2a;
+      --clr-muted:   #6b7a78;
+      --ff:          'Poppins', system-ui, sans-serif;
+      --max-w:       1140px;
+      --radius:      6px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--ff); color: var(--clr-text); background: var(--clr-white); line-height: 1.65; font-weight: 400; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
+      background: rgba(30,53,53,0.97);
+      backdrop-filter: blur(8px);
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(41,184,216,0.25);
+    }
+    nav .nav-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: var(--ff); font-size: 1.25rem; font-weight: 700; color: var(--clr-white); letter-spacing: 0.5px; text-transform: uppercase; }
+    .logo span { color: var(--clr-accent); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { font-size: 0.82rem; letter-spacing: 0.8px; text-transform: uppercase; font-weight: 500; color: rgba(255,255,255,0.8); transition: color .2s; }
+    .nav-links a:hover { color: var(--clr-accent); }
+    .nav-back {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.8px;
+      text-transform: uppercase; color: rgba(255,255,255,0.75);
+      transition: color .2s;
+    }
+    .nav-back:hover { color: var(--clr-accent); }
+    .nav-back::before { content: '←'; }
+
+    /* HERO PAGINA */
+    .page-hero {
+      min-height: 52vh;
+      background: var(--clr-dark);
+      display: flex; align-items: center;
+      padding: 120px 0 72px;
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 80% 50%, rgba(41,184,216,0.11), transparent),
+                  radial-gradient(ellipse 40% 50% at 10% 80%, rgba(77,201,160,0.08), transparent);
+    }
+    .page-hero .container { position: relative; z-index: 1; }
+    .hero-eyebrow {
+      font-size: 0.72rem; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 600;
+      color: var(--clr-accent); margin-bottom: 20px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .hero-eyebrow::before { content: ''; width: 36px; height: 1px; background: var(--clr-accent); }
+    .page-hero h1 {
+      font-size: clamp(2rem,4.5vw,3.2rem); font-weight: 800;
+      color: var(--clr-white); line-height: 1.12; letter-spacing: -0.5px;
+      margin-bottom: 24px; max-width: 700px;
+    }
+    .page-hero h1 em { color: var(--clr-accent); font-style: normal; }
+    .page-hero p {
+      color: rgba(255,255,255,0.65); font-size: 1rem; font-weight: 300;
+      max-width: 560px; line-height: 1.8;
+    }
+    .hero-accent-bar {
+      width: 60px; height: 4px; border-radius: 2px;
+      margin-bottom: 32px;
+    }
+    .bar-consulenza { background: linear-gradient(90deg, var(--clr-sky), var(--clr-mint)); }
+
+    /* SEZIONI GENERICHE */
+    section { padding: 88px 0; }
+    .section-label {
+      font-size: 0.72rem; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 600;
+      color: var(--clr-accent); margin-bottom: 14px;
+    }
+    .section-title {
+      font-size: clamp(1.6rem,3vw,2.4rem); font-weight: 700;
+      color: var(--clr-dark); line-height: 1.18; letter-spacing: -0.3px; margin-bottom: 20px;
+    }
+    .section-sub {
+      color: var(--clr-muted); font-size: 0.97rem; max-width: 560px; line-height: 1.75;
+    }
+
+    /* SERVIZI GRID */
+    #servizi-dettaglio { background: var(--clr-light); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; margin-top: 56px; }
+    .service-card {
+      background: var(--clr-white); padding: 36px 28px; border-radius: var(--radius);
+      border-bottom: 3px solid transparent;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+      transition: border-color .25s, transform .2s;
+    }
+    .service-card:hover { border-bottom-color: var(--clr-accent); transform: translateY(-4px); }
+    .service-icon { font-size: 2rem; margin-bottom: 18px; }
+    .service-card h3 { font-size: 1.02rem; font-weight: 600; margin-bottom: 10px; color: var(--clr-dark); }
+    .service-card p { font-size: 0.88rem; color: var(--clr-muted); line-height: 1.75; }
+
+    /* PROCESSO */
+    #processo { background: var(--clr-white); }
+    .process-list { display: flex; flex-direction: column; gap: 32px; margin-top: 52px; max-width: 720px; }
+    .process-step { display: flex; gap: 28px; align-items: flex-start; }
+    .process-num {
+      flex-shrink: 0;
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--clr-dark); color: var(--clr-accent);
+      font-size: 1rem; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .process-step h4 { font-size: 1rem; font-weight: 600; color: var(--clr-dark); margin-bottom: 6px; }
+    .process-step p { font-size: 0.9rem; color: var(--clr-muted); line-height: 1.75; }
+
+    /* FAQ */
+    #faq { background: var(--clr-light); }
+    .faq-list { display: flex; flex-direction: column; gap: 16px; margin-top: 52px; max-width: 760px; }
+    .faq-item {
+      background: var(--clr-white); border-radius: var(--radius);
+      padding: 28px 32px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      border-left: 3px solid var(--clr-accent);
+    }
+    .faq-q { font-size: 0.97rem; font-weight: 600; color: var(--clr-dark); margin-bottom: 10px; }
+    .faq-a { font-size: 0.9rem; color: var(--clr-muted); line-height: 1.75; }
+
+    /* CTA FINALE */
+    #cta-finale {
+      background: var(--clr-dark);
+      text-align: center; padding: 88px 0;
+    }
+    #cta-finale h2 {
+      font-size: clamp(1.6rem,3vw,2.4rem); font-weight: 700;
+      color: var(--clr-white); letter-spacing: -0.3px; margin-bottom: 16px;
+    }
+    #cta-finale p {
+      color: rgba(255,255,255,0.6); font-size: 1rem; font-weight: 300;
+      max-width: 500px; margin: 0 auto 40px; line-height: 1.8;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--clr-accent); color: var(--clr-dark);
+      padding: 14px 32px; font-size: 0.8rem; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase; border-radius: var(--radius);
+      transition: background .2s, transform .15s;
+    }
+    .btn-primary:hover { background: var(--clr-accent2); transform: translateY(-2px); }
+
+    /* FOOTER */
+    footer {
+      background: var(--clr-dark); color: rgba(255,255,255,0.45);
+      padding: 32px 0; text-align: center; font-size: 0.82rem;
+      border-top: 1px solid rgba(41,184,216,0.2);
+    }
+    footer span { color: var(--clr-accent); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .process-step { flex-direction: column; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">Marco <span>Curzi</span></div>
+      <ul class="nav-links">
+        <li><a href="index.html#servizi">Servizi</a></li>
+        <li><a href="index.html#settori">Settori</a></li>
+        <li><a href="index.html#chi-sono">Chi sono</a></li>
+        <li><a href="index.html#contatti">Contatti</a></li>
+      </ul>
+      <a href="index.html" class="nav-back">Torna alla home</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="hero-eyebrow">Business & Digital Strategy</p>
+      <div class="hero-accent-bar bar-consulenza"></div>
+      <h1>Consulenza <em>Strategica.</em></h1>
+      <p>Analisi, ottimizzazione e digitalizzazione dei tuoi processi aziendali. Un supporto concreto per prendere decisioni migliori, ridurre i costi e accelerare la crescita.</p>
+    </div>
+  </section>
+
+  <!-- SERVIZI DETTAGLIO -->
+  <section id="servizi-dettaglio">
+    <div class="container">
+      <p class="section-label">Come posso aiutarti</p>
+      <h2 class="section-title">Soluzioni concrete<br />per la tua crescita.</h2>
+      <p class="section-sub">Ogni azienda ha sfide uniche. Attraverso un'analisi approfondita dei processi e delle risorse disponibili, identifichiamo le leve più efficaci per migliorare l'efficienza operativa e sostenere lo sviluppo.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🔎</div>
+          <h3>Analisi dei Processi Aziendali</h3>
+          <p>Mappatura e analisi critica dei flussi operativi, identificazione dei colli di bottiglia e delle inefficienze, con piano di intervento prioritizzato.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📈</div>
+          <h3>Ottimizzazione Operativa</h3>
+          <p>Ridefinizione dei processi per massimizzare la produttività, ridurre i costi operativi e migliorare la qualità dei servizi erogati.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💻</div>
+          <h3>Digitalizzazione e Automazione</h3>
+          <p>Introduzione di strumenti digitali su misura: app gestionali, automazione dei flussi amministrativi, dashboard di monitoraggio e reportistica avanzata.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🎯</div>
+          <h3>Supporto Decisionale</h3>
+          <p>Analisi dei dati aziendali, scenari previsionali e KPI personalizzati per supportare le decisioni strategiche con basi solide e oggettive.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🤝</div>
+          <h3>Coaching Commerciale</h3>
+          <p>Affiancamento al team commerciale per migliorare le tecniche di approccio, gestione del cliente e chiusura delle trattative. Metodologie strutturate e orientate al risultato.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🗂️</div>
+          <h3>Project Management</h3>
+          <p>Gestione di progetti complessi: dalla pianificazione all'esecuzione, con monitoraggio delle milestone, gestione dei rischi e rendicontazione continua.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESSO -->
+  <section id="processo">
+    <div class="container">
+      <p class="section-label">Come lavoriamo</p>
+      <h2 class="section-title">Il nostro processo<br />operativo.</h2>
+      <div class="process-list">
+          <div class="process-step">
+            <div class="process-num">01</div>
+            <div>
+              <h4>Assessment iniziale</h4>
+              <p>Sessione di analisi dell'azienda: struttura organizzativa, processi chiave, obiettivi di business e criticità percepite.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-num">02</div>
+            <div>
+              <h4>Diagnosi e piano di intervento</h4>
+              <p>Elaborazione di un report diagnostico con le priorità di intervento, le soluzioni proposte e una stima degli impatti attesi.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-num">03</div>
+            <div>
+              <h4>Implementazione</h4>
+              <p>Affiancamento operativo durante l'implementazione delle soluzioni, con revisione continua e aggiustamenti in corso d'opera.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-num">04</div>
+            <div>
+              <h4>Monitoraggio e KPI</h4>
+              <p>Definizione di indicatori di performance e monitoraggio periodico dei risultati per verificare l'efficacia degli interventi.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-num">05</div>
+            <div>
+              <h4>Follow-up e ottimizzazione</h4>
+              <p>Review periodiche per consolidare i miglioramenti, adattare la strategia alle evoluzioni del mercato e identificare nuove opportunità.</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <p class="section-label">Domande frequenti</p>
+      <h2 class="section-title">Hai dei dubbi?<br />Rispondo subito.</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">A quali tipologie di aziende si rivolge la consulenza strategica?</div>
+          <div class="faq-a">Il servizio è pensato per PMI di ogni settore che vogliono migliorare la propria efficienza operativa, introdurre strumenti digitali o rafforzare il team commerciale. Non è richiesta una dimensione minima.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Quanto dura un percorso di consulenza?</div>
+          <div class="faq-a">Dipende dagli obiettivi e dalla complessità dell'azienda. Un intervento puntuale (es. ottimizzazione di un singolo processo) può durare poche settimane; un percorso strutturato si sviluppa tipicamente su 3-12 mesi.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Come viene misurato il risultato della consulenza?</div>
+          <div class="faq-a">Già nella fase di assessment definiamo insieme gli obiettivi misurabili e i KPI di riferimento. Il monitoraggio periodico ci permette di quantificare i risultati e aggiustare il percorso se necessario.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">È possibile richiedere un intervento solo su un'area specifica?</div>
+          <div class="faq-a">Assolutamente sì. Possiamo intervenire su un singolo aspetto (es. digitalizzazione dei processi amministrativi, formazione del team commerciale) senza necessariamente avviare un percorso completo.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta-finale">
+    <div class="container">
+      <h2>Pronto a crescere?</h2>
+      <p>Parliamoci. Un confronto iniziale di 30 minuti è sufficiente per capire dove e come posso aiutarti concretamente.</p>
+      <a href="index.html#contatti" class="btn-primary">Richiedi una consulenza gratuita</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 <span>Marco Curzi</span> — P.IVA 01234567890 — All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

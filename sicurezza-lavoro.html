@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sicurezza sul Lavoro | Marco Curzi</title>
+  <meta name="description" content="Consulenza completa per la sicurezza sul lavoro: DVR, formazione, RSPP, sopralluoghi e gestione documentale ai sensi del D.Lgs. 81/08." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --clr-dark:    #1E3535;
+      --clr-teal:    #1A7A6E;
+      --clr-mint:    #4DC9A0;
+      --clr-sky:     #29B8D8;
+      --clr-accent:  #F0C96A;
+      --clr-accent2: #f7d98a;
+      --clr-light:   #F0F9F8;
+      --clr-white:   #ffffff;
+      --clr-text:    #2a2a2a;
+      --clr-muted:   #6b7a78;
+      --ff:          'Poppins', system-ui, sans-serif;
+      --max-w:       1140px;
+      --radius:      6px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--ff); color: var(--clr-text); background: var(--clr-white); line-height: 1.65; font-weight: 400; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
+      background: rgba(30,53,53,0.97);
+      backdrop-filter: blur(8px);
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(41,184,216,0.25);
+    }
+    nav .nav-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: var(--ff); font-size: 1.25rem; font-weight: 700; color: var(--clr-white); letter-spacing: 0.5px; text-transform: uppercase; }
+    .logo span { color: var(--clr-accent); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { font-size: 0.82rem; letter-spacing: 0.8px; text-transform: uppercase; font-weight: 500; color: rgba(255,255,255,0.8); transition: color .2s; }
+    .nav-links a:hover { color: var(--clr-accent); }
+    .nav-back {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.8px;
+      text-transform: uppercase; color: rgba(255,255,255,0.75);
+      transition: color .2s;
+    }
+    .nav-back:hover { color: var(--clr-accent); }
+    .nav-back::before { content: '←'; }
+
+    /* HERO PAGINA */
+    .page-hero {
+      min-height: 52vh;
+      background: var(--clr-dark);
+      display: flex; align-items: center;
+      padding: 120px 0 72px;
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 80% 50%, rgba(41,184,216,0.11), transparent),
+                  radial-gradient(ellipse 40% 50% at 10% 80%, rgba(77,201,160,0.08), transparent);
+    }
+    .page-hero .container { position: relative; z-index: 1; }
+    .hero-eyebrow {
+      font-size: 0.72rem; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 600;
+      color: var(--clr-accent); margin-bottom: 20px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .hero-eyebrow::before { content: ''; width: 36px; height: 1px; background: var(--clr-accent); }
+    .page-hero h1 {
+      font-size: clamp(2rem,4.5vw,3.2rem); font-weight: 800;
+      color: var(--clr-white); line-height: 1.12; letter-spacing: -0.5px;
+      margin-bottom: 24px; max-width: 700px;
+    }
+    .page-hero h1 em { color: var(--clr-accent); font-style: normal; }
+    .page-hero p {
+      color: rgba(255,255,255,0.65); font-size: 1rem; font-weight: 300;
+      max-width: 560px; line-height: 1.8;
+    }
+    .hero-accent-bar {
+      width: 60px; height: 4px; border-radius: 2px;
+      margin-bottom: 32px;
+    }
+    .bar-sicurezza { background: linear-gradient(90deg, var(--clr-sky), var(--clr-mint)); }
+
+    /* SEZIONI GENERICHE */
+    section { padding: 88px 0; }
+    .section-label {
+      font-size: 0.72rem; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 600;
+      color: var(--clr-accent); margin-bottom: 14px;
+    }
+    .section-title {
+      font-size: clamp(1.6rem,3vw,2.4rem); font-weight: 700;
+      color: var(--clr-dark); line-height: 1.18; letter-spacing: -0.3px; margin-bottom: 20px;
+    }
+    .section-sub {
+      color: var(--clr-muted); font-size: 0.97rem; max-width: 560px; line-height: 1.75;
+    }
+
+    /* SERVIZI GRID */
+    #servizi-dettaglio { background: var(--clr-light); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; margin-top: 56px; }
+    .service-card {
+      background: var(--clr-white); padding: 36px 28px; border-radius: var(--radius);
+      border-bottom: 3px solid transparent;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+      transition: border-color .25s, transform .2s;
+    }
+    .service-card:hover { border-bottom-color: var(--clr-accent); transform: translateY(-4px); }
+    .service-icon { font-size: 2rem; margin-bottom: 18px; }
+    .service-card h3 { font-size: 1.02rem; font-weight: 600; margin-bottom: 10px; color: var(--clr-dark); }
+    .service-card p { font-size: 0.88rem; color: var(--clr-muted); line-height: 1.75; }
+
+    /* PROCESSO */
+    #processo { background: var(--clr-white); }
+    .process-list { display: flex; flex-direction: column; gap: 32px; margin-top: 52px; max-width: 720px; }
+    .process-step { display: flex; gap: 28px; align-items: flex-start; }
+    .process-num {
+      flex-shrink: 0;
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--clr-dark); color: var(--clr-accent);
+      font-size: 1rem; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .process-step h4 { font-size: 1rem; font-weight: 600; color: var(--clr-dark); margin-bottom: 6px; }
+    .process-step p { font-size: 0.9rem; color: var(--clr-muted); line-height: 1.75; }
+
+    /* FAQ */
+    #faq { background: var(--clr-light); }
+    .faq-list { display: flex; flex-direction: column; gap: 16px; margin-top: 52px; max-width: 760px; }
+    .faq-item {
+      background: var(--clr-white); border-radius: var(--radius);
+      padding: 28px 32px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      border-left: 3px solid var(--clr-accent);
+    }
+    .faq-q { font-size: 0.97rem; font-weight: 600; color: var(--clr-dark); margin-bottom: 10px; }
+    .faq-a { font-size: 0.9rem; color: var(--clr-muted); line-height: 1.75; }
+
+    /* CTA FINALE */
+    #cta-finale {
+      background: var(--clr-dark);
+      text-align: center; padding: 88px 0;
+    }
+    #cta-finale h2 {
+      font-size: clamp(1.6rem,3vw,2.4rem); font-weight: 700;
+      color: var(--clr-white); letter-spacing: -0.3px; margin-bottom: 16px;
+    }
+    #cta-finale p {
+      color: rgba(255,255,255,0.6); font-size: 1rem; font-weight: 300;
+      max-width: 500px; margin: 0 auto 40px; line-height: 1.8;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--clr-accent); color: var(--clr-dark);
+      padding: 14px 32px; font-size: 0.8rem; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase; border-radius: var(--radius);
+      transition: background .2s, transform .15s;
+    }
+    .btn-primary:hover { background: var(--clr-accent2); transform: translateY(-2px); }
+
+    /* FOOTER */
+    footer {
+      background: var(--clr-dark); color: rgba(255,255,255,0.45);
+      padding: 32px 0; text-align: center; font-size: 0.82rem;
+      border-top: 1px solid rgba(41,184,216,0.2);
+    }
+    footer span { color: var(--clr-accent); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .process-step { flex-direction: column; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">Marco <span>Curzi</span></div>
+      <ul class="nav-links">
+        <li><a href="index.html#servizi">Servizi</a></li>
+        <li><a href="index.html#settori">Settori</a></li>
+        <li><a href="index.html#chi-sono">Chi sono</a></li>
+        <li><a href="index.html#contatti">Contatti</a></li>
+      </ul>
+      <a href="index.html" class="nav-back">Torna alla home</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="hero-eyebrow">Conformità D.Lgs. 81/08</p>
+      <div class="hero-accent-bar bar-sicurezza"></div>
+      <h1>Sicurezza <em>sul Lavoro.</em></h1>
+      <p>Un approccio concreto e strutturato per mettere in regola la tua azienda e tutelare i tuoi lavoratori. Dalla valutazione dei rischi alla formazione obbligatoria, gestiamo tutto noi.</p>
+    </div>
+  </section>
+
+  <!-- SERVIZI DETTAGLIO -->
+  <section id="servizi-dettaglio">
+    <div class="container">
+      <p class="section-label">I nostri servizi</p>
+      <h2 class="section-title">Tutto ciò che serve<br />per essere in regola.</h2>
+      <p class="section-sub">Il D.Lgs. 81/08 impone obblighi precisi a ogni datore di lavoro. Ti affianchiamo in ogni adempimento, dalla redazione del DVR alla gestione ordinaria della sicurezza aziendale.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">📄</div>
+          <h3>DVR – Documento di Valutazione dei Rischi</h3>
+          <p>Redazione e aggiornamento del DVR, il documento cardine della sicurezza aziendale. Analisi di tutti i rischi presenti nell'attività lavorativa.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🎓</div>
+          <h3>Formazione Obbligatoria</h3>
+          <p>Corsi di formazione per lavoratori, preposti e dirigenti ai sensi dell'Accordo Stato-Regioni. Eroghiamo formazione generale e specifica per ogni settore.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">👷</div>
+          <h3>RSPP – Responsabile SPP</h3>
+          <p>Nomina e svolgimento dell'incarico di RSPP esterno. Gestiamo tutte le incombenze del Responsabile del Servizio di Prevenzione e Protezione.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔍</div>
+          <h3>Sopralluoghi Tecnici</h3>
+          <p>Sopralluoghi periodici in azienda per la verifica delle condizioni di lavoro, identificazione di nuovi rischi e aggiornamento del DVR.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🚨</div>
+          <h3>Piano di Emergenza</h3>
+          <p>Redazione del piano di emergenza ed evacuazione, con organizzazione delle prove di evacuazione e formazione degli addetti alla gestione delle emergenze.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📁</div>
+          <h3>Gestione Documentale</h3>
+          <p>Archiviazione e aggiornamento di tutta la documentazione obbligatoria: nomine, registri, attestati di formazione, verbali e scadenziari.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESSO -->
+  <section id="processo">
+    <div class="container">
+      <p class="section-label">Come lavoriamo</p>
+      <h2 class="section-title">Il nostro processo<br />operativo.</h2>
+      <div class="process-list">
+          <div class="process-step">
+            <div class="process-num">01</div>
+            <div>
+              <h4>Analisi iniziale dell'azienda</h4>
+              <p>Raccogliamo informazioni sull'attività, il numero di dipendenti, i processi produttivi e la documentazione già esistente.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-num">02</div>
+            <div>
+              <h4>Sopralluogo e valutazione dei rischi</h4>
+              <p>Effettuiamo un sopralluogo completo dei luoghi di lavoro per identificare tutti i fattori di rischio presenti.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-num">03</div>
+            <div>
+              <h4>Redazione del DVR</h4>
+              <p>Elaboriamo il Documento di Valutazione dei Rischi con le misure di prevenzione e protezione da adottare, personalizzato per la tua realtà aziendale.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-num">04</div>
+            <div>
+              <h4>Formazione del personale</h4>
+              <p>Pianifichiamo ed eroghiamo i corsi di formazione obbligatori per tutti i lavoratori, preposti e dirigenti.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-num">05</div>
+            <div>
+              <h4>Gestione ordinaria e aggiornamenti</h4>
+              <p>Gestiamo le scadenze periodiche, gli aggiornamenti del DVR, la formazione di nuovi assunti e ogni variazione organizzativa o normativa.</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <p class="section-label">Domande frequenti</p>
+      <h2 class="section-title">Hai dei dubbi?<br />Rispondo subito.</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">Il DVR è obbligatorio per tutte le aziende?</div>
+          <div class="faq-a">Sì. Il DVR è obbligatorio per tutte le aziende con almeno un dipendente. Nelle aziende fino a 10 dipendenti in settori a rischio basso, è consentita l'autocertificazione, ma la valutazione dei rischi rimane obbligatoria.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Ogni quanto va aggiornato il DVR?</div>
+          <div class="faq-a">Il DVR deve essere aggiornato ogni volta che avvengono cambiamenti significativi: nuove attrezzature, nuovi processi, variazioni dell'organico, infortuni o modifiche normative. Il nostro servizio include l'aggiornamento periodico.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Posso nominare un RSPP esterno?</div>
+          <div class="faq-a">Sì, per la maggior parte delle aziende è possibile nominare un RSPP esterno qualificato. Questo consente di avere sempre un professionista aggiornato senza gravare sull'organico interno.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Quali sanzioni si rischiano in caso di DVR assente o non aggiornato?</div>
+          <div class="faq-a">Le sanzioni variano da ammende fino a 6.000 euro ad arresti fino a 6 mesi per il datore di lavoro. In caso di infortuni, la mancanza di documentazione aggrava notevolmente la posizione penale e civile.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta-finale">
+    <div class="container">
+      <h2>La tua azienda è in regola?</h2>
+      <p>Richiedi una verifica gratuita della tua documentazione di sicurezza. Identifichiamo subito le eventuali criticità e ti proponiamo un piano d'azione.</p>
+      <a href="index.html#contatti" class="btn-primary">Richiedi una consulenza gratuita</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 <span>Marco Curzi</span> — P.IVA 01234567890 — All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
