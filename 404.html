@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pagina non trovata | Marco Curzi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--clr-dark:#1E3535;--clr-teal:#1A7A6E;--clr-accent:#F0C96A;--clr-white:#fff;--ff:'Poppins',system-ui,sans-serif}
+    body{font-family:var(--ff);background:var(--clr-dark);color:#fff;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px;-webkit-font-smoothing:antialiased}
+    .error-code{font-size:clamp(6rem,20vw,12rem);font-weight:800;color:transparent;-webkit-text-stroke:2px rgba(240,201,106,0.35);line-height:1;margin-bottom:8px;letter-spacing:-4px}
+    .error-title{font-size:clamp(1.4rem,3vw,2rem);font-weight:700;margin-bottom:14px;letter-spacing:-.3px}
+    .error-title em{color:var(--clr-accent);font-style:normal}
+    .error-desc{font-size:.97rem;color:rgba(255,255,255,.52);font-weight:300;line-height:1.75;max-width:420px;margin:0 auto 40px}
+    .btn{display:inline-block;background:var(--clr-accent);color:var(--clr-dark);padding:13px 30px;font-size:.8rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-radius:6px;text-decoration:none;transition:opacity .2s,transform .15s;margin:6px}
+    .btn:hover{opacity:.88;transform:translateY(-2px)}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.75)}
+    .btn-ghost:hover{border-color:rgba(255,255,255,.5);color:#fff}
+    .logo{position:absolute;top:24px;left:50%;transform:translateX(-50%);font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:rgba(255,255,255,.6)}
+    .logo span{color:var(--clr-accent)}
+    .divider{width:48px;height:2px;background:rgba(240,201,106,.3);margin:0 auto 32px;border-radius:1px}
+  </style>
+</head>
+<body>
+  <div class="logo">Marco <span>Curzi</span></div>
+  <div class="error-code">404</div>
+  <div class="divider"></div>
+  <h1 class="error-title">Pagina <em>non trovata.</em></h1>
+  <p class="error-desc">La pagina che stai cercando non esiste o è stata spostata. Torna alla home o scopri i nostri servizi.</p>
+  <div>
+    <a href="index.html" class="btn">← Torna alla home</a>
+    <a href="index.html#contatti" class="btn btn-ghost">Contattami</a>
+  </div>
+</body>
+</html>
