@@ -481,7 +481,7 @@
           </div>
           <div class="contact-item">
             <div class="contact-item-icon">✉️</div>
-            <div><div class="contact-item-label">Email</div><div class="contact-item-value"><a href="mailto:info@marcocurzi.it">info@marcocurzi.it</a></div></div>
+            <div><div class="contact-item-label">Email</div><div class="contact-item-value"><a href="mailto:consulenze.fano@gmail.com">consulenze.fano@gmail.com</a></div></div>
           </div>
           <div class="contact-item">
             <div class="contact-item-icon">📞</div>
@@ -590,7 +590,7 @@
         fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
         .then(function(r) {
           if (r.ok) { form.style.display = 'none'; success.style.display = 'block'; }
-          else { btn.textContent = 'Invia messaggio →'; btn.disabled = false; alert('Errore. Scrivi a info@marcocurzi.it'); }
+          else { btn.textContent = 'Invia messaggio →'; btn.disabled = false; alert('Errore. Scrivi a consulenze.fano@gmail.com'); }
         }).catch(function() { btn.textContent = 'Invia messaggio →'; btn.disabled = false; alert('Errore di rete.'); });
       });
     })();
