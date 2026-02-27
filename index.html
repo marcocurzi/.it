@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -232,6 +233,7 @@
     .settore-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
     .settore-card.card-impianti::before  { background: linear-gradient(90deg, var(--clr-sky), var(--clr-mint)); }
     .settore-card.card-sicurezza::before { background: linear-gradient(90deg, var(--clr-mint), var(--clr-teal)); }
+    .settore-card.card-formazione::before { background: linear-gradient(90deg, var(--clr-mint), var(--clr-accent)); }
     .settore-card.card-consulenza::before { background: linear-gradient(90deg, var(--clr-accent), var(--clr-sky)); }
     .settore-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(30,53,53,0.18); }
     .settore-card-icon { font-size: 2.4rem; line-height: 1; }
@@ -391,10 +393,10 @@
           <p>Verifiche periodiche obbligatorie di impianti elettrici, messa a terra, scariche atmosferiche e attrezzature ai sensi del DPR 462/01 e D.Lgs. 81/08.</p>
           <span class="settore-card-cta">Scopri di più</span>
         </a>
-        <a href="formazione Obbligatoria.html" class="settore-card card-formazione">
-          <div class="settore-card-icon">🛡️</div>
-          <h3>Sicurezza sul Lavoro</h3>
-          <p>Consulenza completa D.Lgs. 81/08: DVR, formazione del personale, nomina RSPP, sopralluoghi e gestione documentale integrata.</p>
+        <a href="formazione-obbligatoria.html" class="settore-card card-formazione">
+          <div class="settore-card-icon">🎓</div>
+          <h3>Formazione Obbligatoria</h3>
+          <p>Corsi abilitanti per rischio elettrico PES/PAV/PEI (CEI 11-27), operatori di carroponte e PRSES per scaffalature metalliche.</p>
           <span class="settore-card-cta">Scopri di più</span>
         </a>
         <a href="consulenza-strategica.html" class="settore-card card-consulenza">
@@ -499,7 +501,7 @@
               <select id="servizio" name="servizio" required>
                 <option value="">— Seleziona un settore —</option>
                 <option value="verifiche">Verifiche Impianti ed Attrezzature</option>
-                <option value="sicurezza">Sicurezza sul Lavoro</option>
+                <option value="formazione">Formazione Obbligatoria</option>
                 <option value="consulenza">Consulenza Strategica</option>
                 <option value="altro">Altro</option>
               </select>
@@ -536,7 +538,7 @@
             <div class="footer-col-title">Settori</div>
             <ul>
               <li><a href="verifiche-impianti.html">Verifiche Impianti</a></li>
-              <li><a href="sicurezza-lavoro.html">Sicurezza sul Lavoro</a></li>
+              <li><a href="formazione-obbligatoria.html">Formazione Obbligatoria</a></li>
               <li><a href="consulenza-strategica.html">Consulenza Strategica</a></li>
             </ul>
           </div>
