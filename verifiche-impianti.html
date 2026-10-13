@@ -41,7 +41,7 @@
     #servizi-dettaglio{background:var(--clr-light)}
     .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:48px}
     .service-card{background:var(--clr-white);padding:32px 26px;border-radius:var(--radius);border-bottom:3px solid transparent;box-shadow:0 2px 16px rgba(0,0,0,.05);transition:border-color .25s,transform .2s}
-    .service-card:hover{border-bottom-color:var(--clr-accent);transform:translateY(-4px)}
+    a.service-card{color:inherit}.service-card:hover{border-bottom-color:var(--clr-accent);transform:translateY(-4px)}
     .service-icon{font-size:1.9rem;margin-bottom:16px}
     .service-card h3{font-size:1rem;font-weight:600;margin-bottom:10px;color:var(--clr-dark)}
     .service-card p{font-size:0.87rem;color:var(--clr-muted);line-height:1.75}
@@ -102,8 +102,7 @@
         <li><a href="index.html#servizi">Servizi</a></li>
         <li><a href="index.html#settori">Settori</a></li>
         <li><a href="index.html#normativa">Normativa</a></li>
-        <li><a href="index.html#contatti">Contatti</a></li>
-      </ul>
+        <li><a href="index.html#contatti">Contatti</a></li></ul>
       <a href="index.html" class="nav-back">Home</a>
     </div>
   </nav>
@@ -113,28 +112,25 @@
       <p class="hero-eyebrow">Verifiche tecniche obbligatorie</p>
       <div class="accent-bar bar-impianti"></div>
       <h1>Verifiche Impianti ed <em>Attrezzature di Lavoro.</em></h1>
-      <p>Garantiamo la conformità normativa dei tuoi impianti con verifiche periodiche certificate ai sensi del DPR 462/01 e D.Lgs. 81/08. Competenza tecnica, puntualità e documentazione completa.</p>
+      <p>Garantisco la conformità normativa dei tuoi impianti con verifiche periodiche ai sensi del DPR 462/01 e D.Lgs. 81/08. Competenza tecnica, puntualità e documentazione completa.</p>
     </div>
   </section>
 
   <section id="servizi-dettaglio">
     <div class="container">
-      <p class="section-label">Cosa verifichiamo</p>
+      <p class="section-label">Cosa verifico</p>
       <h2 class="section-title">Tutte le verifiche di cui hai bisogno.</h2>
-      <p class="section-sub">Dal sopralluogo iniziale al rilascio della documentazione ufficiale, gestiamo l'intero iter per impianti elettrici, messa a terra e attrezzature soggette a controllo periodico.</p>
+      <p class="section-sub">Dal sopralluogo iniziale al rilascio della documentazione ufficiale, gestisco l'intero iter per impianti elettrici, messa a terra e attrezzature soggette a controllo periodico.</p>
       <div class="services-grid">
         <div class="service-card">
           <div class="service-icon">⚡</div>
           <h3>Impianti Elettrici</h3><p>Verifica periodica degli impianti elettrici nei luoghi di lavoro: conformità, stato di conservazione e idoneità degli impianti esistenti.</p>
         </div>
-        <div class="service-card">
-          <div class="service-icon">🌍</div>
-          <h3>Messa a Terra</h3><p>Verifica biennale o quinquennale degli impianti di messa a terra ai sensi del DPR 462/01, con comunicazione agli enti competenti (INAIL, ASL).</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">⛈️</div>
-          <h3>Scariche Atmosferiche</h3><p>Verifica degli impianti di protezione contro le scariche atmosferiche. Valutazione del rischio e conformità normativa.</p>
-        </div>
+        <a class="service-card" href="verifica-messa-a-terra-scariche-atmosferiche.html" style="display:block">
+          <div class="service-icon">🌍 ⛈️</div>
+          <h3>Messa a Terra e Scariche Atmosferiche</h3><p>Verifica periodica (ogni 5 anni, ogni 2 nei casi particolari) degli impianti di terra e di protezione dai fulmini ai sensi del DPR 462/01, con gestione delle comunicazioni agli enti competenti.</p>
+          <p style="margin-top:12px;font-weight:600;color:var(--clr-teal);font-size:.8rem;letter-spacing:1px;text-transform:uppercase">Scopri di più →</p>
+        </a>
         <div class="service-card">
           <div class="service-icon">🔧</div>
           <h3>Attrezzature di Lavoro</h3><p>Verifiche periodiche di gru, sollevatori, autoscale, recipienti a pressione e altre attrezzature di cui all'Allegato VII D.Lgs. 81/08.</p>
@@ -146,6 +142,26 @@
         <div class="service-card">
           <div class="service-icon">📦</div>
           <h3>Scaffalature Metalliche</h3><p>Ispezioni periodiche di scaffalature e portapallet secondo UNI EN 15635: rilievo dei danni, classificazione e indicazioni per il ripristino in sicurezza.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🛗</div>
+          <h3>Ascensori e Montacarichi</h3><p>Verifiche periodiche (ogni 2 anni) e straordinarie su ascensori e montacarichi ai sensi del DPR 162/99, con gestione delle comunicazioni e della documentazione.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">♨️</div>
+          <h3>Attrezzature a Pressione</h3><p>Verifiche periodiche e straordinarie di recipienti a pressione, generatori di vapore, tubazioni e impianti di riscaldamento, secondo l'Allegato VII del D.Lgs. 81/08.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🚪</div>
+          <h3>Cancelli e Accessi Automatici</h3><p>Verifiche periodiche su cancelli, porte e varchi motorizzati: sicurezze, dispositivi di arresto e conformità alla Direttiva Macchine (D.Lgs. 17/2010).</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔬</div>
+          <h3>Apparecchi Elettromedicali</h3><p>Verifiche periodiche di sicurezza elettrica su apparecchi elettromedicali secondo la norma CEI EN 62353.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🌡️</div>
+          <h3>Indagini Termografiche</h3><p>Controllo con termocamera di quadri elettrici e impianti fotovoltaici per individuare surriscaldamenti, collegamenti allentati e anomalie prima che causino guasti o incendi.</p>
         </div>
         <div class="service-card">
           <div class="service-icon">📋</div>
@@ -160,16 +176,16 @@
 
   <section id="processo">
     <div class="container">
-      <p class="section-label">Come lavoriamo</p>
-      <h2 class="section-title">Il nostro processo operativo.</h2>
+      <p class="section-label">Come lavoro</p>
+      <h2 class="section-title">Il mio processo operativo.</h2>
       <div class="process-list">
           <div class="process-step">
             <div class="process-num">01</div>
-            <div><h4>Richiesta e sopralluogo preliminare</h4><p>Raccogliamo informazioni sugli impianti presenti. Se necessario, effettuiamo un sopralluogo gratuito per pianificare le attività.</p></div>
+            <div><h4>Richiesta e sopralluogo preliminare</h4><p>Raccolgo informazioni sugli impianti presenti. Se necessario, effettuo un sopralluogo gratuito per pianificare le attività.</p></div>
           </div>
           <div class="process-step">
             <div class="process-num">02</div>
-            <div><h4>Programmazione delle verifiche</h4><p>Stabiliamo un calendario compatibile con la tua attività, minimizzando le interruzioni operative.</p></div>
+            <div><h4>Programmazione delle verifiche</h4><p>Stabilisco un calendario compatibile con la tua attività, minimizzando le interruzioni operative.</p></div>
           </div>
           <div class="process-step">
             <div class="process-num">03</div>
@@ -177,11 +193,11 @@
           </div>
           <div class="process-step">
             <div class="process-num">04</div>
-            <div><h4>Rilascio documentazione</h4><p>Consegniamo verbale di verifica, relazioni tecniche e gestiamo le comunicazioni agli enti (INAIL, ASL, VVF).</p></div>
+            <div><h4>Rilascio documentazione</h4><p>Consegno il verbale di verifica e le relazioni tecniche, e gestisco le comunicazioni agli enti (INAIL, ASL, VVF).</p></div>
           </div>
           <div class="process-step">
             <div class="process-num">05</div>
-            <div><h4>Gestione scadenze future</h4><p>Inseriamo le scadenze nel sistema di monitoraggio: ti avvisiamo in anticipo per ogni prossima verifica.</p></div>
+            <div><h4>Gestione scadenze future</h4><p>Inserisco le scadenze nel sistema di monitoraggio: ti avviso in anticipo per ogni prossima verifica.</p></div>
           </div></div>
     </div>
   </section>
@@ -193,15 +209,15 @@
       <div class="faq-list">
         <div class="faq-item">
           <div class="faq-q">Con quale frequenza vanno eseguite le verifiche di messa a terra?</div>
-          <div class="faq-a">Ogni 2 anni per luoghi con pericolo di esplosione, cantieri e locali medici; ogni 5 anni per tutti gli altri luoghi di lavoro (art. 4 DPR 462/01).</div>
+          <div class="faq-a">Ogni 2 anni per cantieri, locali medici e ambienti a maggior rischio di incendio o di esplosione; ogni 5 anni per tutti gli altri luoghi di lavoro (art. 4 DPR 462/01). <a href="verifica-messa-a-terra-scariche-atmosferiche.html" style="text-decoration:underline">Approfondisci</a>.</div>
         </div>
         <div class="faq-item">
           <div class="faq-q">Chi può eseguire le verifiche periodiche?</div>
-          <div class="faq-a">Organismi Notificati riconosciuti dal Ministero o, in alternativa, tecnici ASL/ARPA. Coordiniamo l'intero iter per tuo conto.</div>
+          <div class="faq-a">Un Organismo Abilitato o, in alternativa, l'ASL/ARPA competente per territorio. Contattami: ti spiego come procedere.</div>
         </div>
         <div class="faq-item">
           <div class="faq-q">Cosa succede se non eseguo la verifica entro la scadenza?</div>
-          <div class="faq-a">Sanzioni amministrative e penali a carico del datore di lavoro ai sensi del D.Lgs. 81/08 e DPR 462/01. Il nostro scadenziario ti protegge da questi rischi.</div>
+          <div class="faq-a">Sanzioni amministrative e penali a carico del datore di lavoro ai sensi del D.Lgs. 81/08 e DPR 462/01. Il mio scadenziario ti protegge da questi rischi.</div>
         </div>
         <div class="faq-item">
           <div class="faq-q">Le verifiche si applicano anche alle piccole imprese?</div>
@@ -217,12 +233,12 @@
       <p class="section-label">Quadro normativo</p>
       <h2 class="section-title" style="color:#fff;">Normative di riferimento.</h2>
       <div class="norme-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:44px;">
-        <div class="norma-card"><span class="norma-tag">Impianti</span><h4>DPR 462/01</h4><p>Verifica periodica impianti elettrici, messa a terra e scariche atmosferiche.</p></div>
-        <div class="norma-card"><span class="norma-tag">Sicurezza</span><h4>D.Lgs. 81/08</h4><p>Testo Unico: DVR, RSPP, formazione e misure di prevenzione obbligatorie.</p></div>
-        <div class="norma-card"><span class="norma-tag">Attrezzature</span><h4>All. VII — D.Lgs. 81/08</h4><p>Verifiche periodiche obbligatorie: gru, sollevatori, recipienti a pressione.</p></div>
-        <div class="norma-card"><span class="norma-tag">Elettrico</span><h4>CEI 64-8 / CEI 11-27</h4><p>Impianti elettrici BT e lavori in sicurezza secondo norme CEI.</p></div>
-        <div class="norma-card"><span class="norma-tag">Formazione</span><h4>Accordo Stato-Regioni</h4><p>Formazione obbligatoria lavoratori, preposti e dirigenti.</p></div>
-        <div class="norma-card"><span class="norma-tag">Antincendio</span><h4>D.M. 2 Set. 2021</h4><p>Codice Prevenzione Incendi: valutazione rischio e piani di emergenza.</p></div>
+        <a class="norma-card" href="normativa-dpr-462-01.html"><span class="norma-tag">Impianti</span><h4>DPR 462/01</h4><p>Verifica periodica impianti elettrici, messa a terra e scariche atmosferiche.</p><span class="norma-cta">Approfondisci →</span></a>
+        <a class="norma-card" href="normativa-d-lgs-81-08.html"><span class="norma-tag">Sicurezza</span><h4>D.Lgs. 81/08</h4><p>Testo Unico: DVR, RSPP, formazione e misure di prevenzione obbligatorie.</p><span class="norma-cta">Approfondisci →</span></a>
+        <a class="norma-card" href="normativa-allegato-vii.html"><span class="norma-tag">Attrezzature</span><h4>All. VII — D.Lgs. 81/08</h4><p>Verifiche periodiche obbligatorie: gru, sollevatori, recipienti a pressione.</p><span class="norma-cta">Approfondisci →</span></a>
+        <a class="norma-card" href="normativa-cei-64-8-11-27.html"><span class="norma-tag">Elettrico</span><h4>CEI 64-8 / CEI 11-27</h4><p>Impianti elettrici BT e lavori in sicurezza secondo norme CEI.</p><span class="norma-cta">Approfondisci →</span></a>
+        <a class="norma-card" href="normativa-accordi-stato-regioni.html"><span class="norma-tag">Formazione</span><h4>Accordo Stato-Regioni</h4><p>Formazione obbligatoria lavoratori, preposti e dirigenti.</p><span class="norma-cta">Approfondisci →</span></a>
+        <a class="norma-card" href="normativa-dm-2-settembre-2021.html"><span class="norma-tag">Antincendio</span><h4>D.M. 2 Set. 2021</h4><p>Gestione della sicurezza antincendio in esercizio e in emergenza.</p><span class="norma-cta">Approfondisci →</span></a>
       </div>
     </div>
   </section>
@@ -265,6 +281,7 @@
               <li><a href="index.html#chi-sono">Chi sono</a></li>
               <li><a href="index.html#normativa">Normativa</a></li>
               <li><a href="index.html#contatti">Contatti</a></li>
+              <li><a href="download.html">Download</a></li>
             </ul>
           </div>
           <div class="footer-col">
