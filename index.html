@@ -20,7 +20,7 @@
   <meta property="og:site_name" content="Marco Curzi" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" /><style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,500;1,600&display=swap" rel="stylesheet" /><style>
     /* ── RESET & BASE ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -70,7 +70,7 @@
     /* ── HERO ── */
     #hero {
       min-height: 100vh;
-      background: var(--clr-dark);
+      background: linear-gradient(90deg, rgba(30,53,53,0.95) 0%, rgba(30,53,53,0.86) 45%, rgba(30,53,53,0.72) 100%), url(hero-bg.jpg) center / cover no-repeat, var(--clr-dark);
       display: flex; align-items: center;
       position: relative; overflow: hidden;
       padding-top: 80px;
@@ -85,6 +85,8 @@
       font-size: 0.75rem; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 600;
       color: var(--clr-accent); margin-bottom: 20px; display: flex; align-items: center; gap: 12px;
     }
+    .hero-eyebrow { font-style: italic; font-size: 0.95rem !important; font-weight: 600; letter-spacing: 3px; }
+    .hero-eyebrow b { color: rgba(255,255,255,0.45); font-weight: 400; margin: 0 6px; }
     .hero-eyebrow::before { content: ''; width: 36px; height: 1px; background: var(--clr-accent); }
     .hero-content h1 { font-family: var(--ff-sans); font-size: clamp(2.2rem,5vw,3.6rem); font-weight: 800; color: var(--clr-white); line-height: 1.12; letter-spacing: -0.5px; margin-bottom: 24px; }
     .hero-content h1 em { color: var(--clr-accent); font-style: normal; }
@@ -142,7 +144,7 @@
       position: relative;
       background: var(--clr-light);
       border-radius: var(--radius);
-      aspect-ratio: 4/5;
+      aspect-ratio: 896 / 1195;
       overflow: hidden;
     }
     .about-img-wrap::after {
@@ -230,7 +232,11 @@
     #settori { background: var(--clr-white); }
     .settori-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; margin-top: 56px; }
     .settore-card { position: relative; background: var(--clr-dark); border-radius: 10px; overflow: hidden; padding: 48px 36px 40px; display: flex; flex-direction: column; gap: 16px; text-decoration: none; transition: transform .25s, box-shadow .25s; box-shadow: 0 4px 24px rgba(30,53,53,0.10); }
-    .settore-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
+    .settore-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; z-index: 1; }
+    .settore-card-img { display: block; width: calc(100% + 72px); max-width: none; height: auto; aspect-ratio: 1 / 1; object-fit: cover; margin: -48px -36px 8px; transition: transform .4s; }
+    .settore-card { overflow: hidden; }
+    .settore-card:hover .settore-card-img { transform: scale(1.04); }
+    @media (min-width: 769px) { .settore-card h3 { min-height: 2.6em; } }
     .settore-card.card-impianti::before  { background: linear-gradient(90deg, var(--clr-sky), var(--clr-mint)); }
     .settore-card.card-sicurezza::before { background: linear-gradient(90deg, var(--clr-mint), var(--clr-teal)); }
     .settore-card.card-formazione::before { background: linear-gradient(90deg, var(--clr-mint), var(--clr-accent)); }
@@ -298,6 +304,17 @@
     .footer-bottom a { color: rgba(255,255,255,0.28); transition: color .2s; }
     .footer-bottom a:hover { color: rgba(255,255,255,0.6); }
 
+    /* ── COME LAVORO ── */
+    #come-lavoro { background: var(--clr-light); }
+    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px; margin-top: 52px; }
+    .step-card { background: var(--clr-white); border-radius: var(--radius); padding: 34px 28px; box-shadow: 0 2px 16px rgba(0,0,0,0.05); border-top: 3px solid var(--clr-accent); }
+    .step-num { font-size: 2rem; font-weight: 800; color: var(--clr-accent); letter-spacing: -1px; line-height: 1; margin-bottom: 14px; }
+    .step-card h3 { font-size: 1.02rem; font-weight: 600; color: var(--clr-dark); margin-bottom: 10px; }
+    .step-card p { font-size: 0.9rem; color: var(--clr-muted); line-height: 1.75; }
+    /* ── WHATSAPP ── */
+    .wa-float { position: fixed; right: 18px; bottom: 18px; z-index: 90; display: flex; align-items: center; gap: 8px; background: #25D366; color: #fff; padding: 12px 18px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; box-shadow: 0 4px 18px rgba(0,0,0,0.25); transition: transform .15s; }
+    .wa-float:hover { transform: translateY(-2px); }
+    @media (max-width: 480px) { .wa-float span:last-child { display: none; } .wa-float { padding: 14px; } }
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       .pillole-grid { gap: 8px; }
@@ -312,7 +329,9 @@
       .btn-outline { margin-left: 0; margin-top: 12px; }
       .nav-links { display: none; }
     }
-  </style>
+  .footer-contacts{margin-top:8px}.footer-contacts a{color:rgba(255,255,255,0.55);transition:color .2s}.footer-contacts a:hover{color:#F0C96A}
+</style>
+<link rel="stylesheet" href="menu.css" />
 </head>
 
 <body>
@@ -337,9 +356,9 @@
   <section id="hero">
     <div class="container">
       <div class="hero-content">
-        <p class="hero-eyebrow">Consulenza professionale</p>
-        <h1>Soluzioni <em>concrete</em><br />per la tua azienda.</h1>
-        <p>Sicurezza sul lavoro, verifiche tecniche e consulenza strategica. Ti accompagno in ogni fase con competenza e affidabilità.</p>
+        <p class="hero-eyebrow">Ispezioni <b>|</b> Consulenze <b>|</b> Digital</p>
+        <h1>Sicurezza e conformità <em>senza pensieri</em><br />per la tua azienda.</h1>
+        <p>Verifiche periodiche di impianti e attrezzature, formazione obbligatoria e consulenza strategica. Un unico referente, dall'incarico allo scadenzario.</p>
         <a href="#contatti" class="btn-primary">Prenota una consulenza</a>
         <a href="#servizi" class="btn-outline">Scopri i servizi</a>
         <div class="hero-stats">
@@ -349,11 +368,11 @@
           </div>
           <div>
             <div class="stat-num">2000+</div>
-            <div class="stat-label">Clienti soddisfatti</div>
+            <div class="stat-label">Clienti seguiti</div>
           </div>
           <div>
-            <div class="stat-num">100%</div>
-            <div class="stat-label">Conformità garantita</div>
+            <div class="stat-num">Gratis</div>
+            <div class="stat-label">Scadenzario verifiche incluso</div>
           </div>
         </div>
       </div>
@@ -363,12 +382,14 @@
   <!-- SERVIZI -->
   <section id="servizi" style="background:var(--clr-light);padding:56px 0;">
     <div class="container">
-      <p class="section-label">Cosa facciamo</p>
-      <h2 class="section-title">Le nostre competenze<br />in sintesi.</h2>
+      <p class="section-label">Cosa faccio</p>
+      <h2 class="section-title">Le mie competenze,<br />dalle verifiche al digitale.</h2>
       <div class="pillole-grid">
         <div class="pillola"><span class="pillola-icon">⚡</span><span>Verifiche Impianti Elettrici</span></div>
         <div class="pillola"><span class="pillola-icon">🌍</span><span>Messa a Terra e Scariche Atmosferiche</span></div>
         <div class="pillola"><span class="pillola-icon">🔧</span><span>Verifiche Attrezzature di Lavoro (All. VII)</span></div>
+        <div class="pillola"><span class="pillola-icon">⛑️</span><span>DPI di III Categoria (anticaduta)</span></div>
+        <div class="pillola"><span class="pillola-icon">📦</span><span>Scaffalature Metalliche (PRSES)</span></div>
         <div class="pillola"><span class="pillola-icon">🔬</span><span>Apparecchi Elettromedicali CEI-EN 62353</span></div>
         <div class="pillola"><span class="pillola-icon">🏢</span><span>Verifiche ispettive Cancelli Automatici</span></div>
         <div class="pillola"><span class="pillola-icon">🎓</span><span>Formazione obbligatoria Sollevamenti</span></div>
@@ -384,23 +405,23 @@
   <section id="settori">
     <div class="container">
       <p class="section-label">Aree di intervento</p>
-      <h2 class="section-title">I nostri settori<br />di specializzazione.</h2>
+      <h2 class="section-title">I miei settori<br />di specializzazione.</h2>
       <p class="section-sub">Tre aree di competenza integrate per garantire sicurezza, conformità normativa e crescita strategica alla tua azienda.</p>
       <div class="settori-grid">
         <a href="verifiche-impianti.html" class="settore-card card-impianti">
-          <div class="settore-card-icon">⚡</div>
+          <img class="settore-card-img" src="settore-impianti.jpg" alt="Verifiche su attrezzature di sollevamento" width="640" height="480" loading="lazy" />
           <h3>Verifiche Impianti ed Attrezzature di Lavoro</h3>
-          <p>Verifiche periodiche obbligatorie di impianti elettrici, messa a terra, scariche atmosferiche e attrezzature ai sensi del DPR 462/01 e D.Lgs. 81/08.</p>
+          <p>Verifiche periodiche obbligatorie di impianti elettrici, messa a terra, scariche atmosferiche, attrezzature, DPI anticaduta di III categoria e scaffalature metalliche ai sensi del DPR 462/01 e D.Lgs. 81/08.</p>
           <span class="settore-card-cta">Scopri di più</span>
         </a>
         <a href="formazione-obbligatoria.html" class="settore-card card-formazione">
-          <div class="settore-card-icon">🎓</div>
+          <img class="settore-card-img" src="settore-formazione.jpg" alt="Aula di formazione sulla sicurezza sul lavoro" width="640" height="480" loading="lazy" />
           <h3>Formazione Obbligatoria</h3>
           <p>Corsi abilitanti per rischio elettrico PES/PAV/PEI (CEI 11-27), operatori di carroponte e PRSES per scaffalature metalliche.</p>
           <span class="settore-card-cta">Scopri di più</span>
         </a>
         <a href="consulenza-strategica.html" class="settore-card card-consulenza">
-          <div class="settore-card-icon">📊</div>
+          <img class="settore-card-img" src="settore-consulenza.jpg" alt="Progettazione impianti e analisi dei processi" width="640" height="480" loading="lazy" />
           <h3>Consulenza Strategica</h3>
           <p>Analisi e ottimizzazione dei processi aziendali, supporto decisionale e sviluppo di soluzioni digitali per la crescita del business.</p>
           <span class="settore-card-cta">Scopri di più</span>
@@ -414,7 +435,7 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-img-wrap">
-          <img src="foto-profilo.jpg" alt="Marco Curzi" /> -->
+          <img src="foto-profilo.jpg" alt="Marco Curzi, consulente tecnico per verifiche impianti e sicurezza sul lavoro" width="896" height="1195" loading="lazy" style="width:100%;height:100%;object-fit:cover" />
         </div>
         <div class="about-text">
           <p class="section-label">Chi sono</p>
@@ -432,6 +453,19 @@
     </div>
   </section>
 
+  <!-- COME LAVORO -->
+  <section id="come-lavoro">
+    <div class="container">
+      <p class="section-label">Come lavoro</p>
+      <h2 class="section-title">Tre passi,<br />un solo referente.</h2>
+      <p class="section-sub">Un metodo semplice per toglierti il pensiero di scadenze e adempimenti.</p>
+      <div class="steps-grid">
+        <div class="step-card"><div class="step-num">01</div><h3>Sopralluogo e censimento</h3><p>Analizzo impianti e attrezzature presenti in azienda e individuo le verifiche obbligatorie e le relative scadenze.</p></div>
+        <div class="step-card"><div class="step-num">02</div><h3>Verifica e documentazione</h3><p>Eseguo le verifiche periodiche, gestisco l'intero iter e ti consegno una documentazione chiara e conforme.</p></div>
+        <div class="step-card"><div class="step-num">03</div><h3>Scadenzario gratuito</h3><p>Tengo monitorate le scadenze al posto tuo e ti avviso in tempo: niente più verifiche scadute o sanzioni.</p></div>
+      </div>
+    </div>
+  </section>
   <!-- TESTIMONIANZE -->
   <section id="testimonianze">
     <div class="container">
@@ -439,7 +473,7 @@
       <h2 class="section-title">Cosa dicono i clienti.</h2>
       <div class="testimonials-grid">
         <div class="testimonial-card">
-          <blockquote>"Professionalità e puntaulità ben oltre gli standard. Gestito tutto l'iter di verifica con puntualità, precisione e tutto il supporto necessario. Completa il già ottimo servizio la gestione gratuita dello scadenzario, su un grande numero di impianti ed attrezzature."</blockquote>
+          <blockquote>"Professionalità e puntualità ben oltre gli standard. Ha gestito l'intero iter di verifica con precisione e tutto il supporto necessario. A completare il servizio, la gestione gratuita dello scadenzario su un gran numero di impianti e attrezzature."</blockquote>
           <div class="testimonial-author">BIESSE SPA — Hse Manager</div>
         </div>
         <div class="testimonial-card">
@@ -459,14 +493,14 @@
     <div class="container">
       <p class="section-label">Quadro normativo</p>
       <h2 class="section-title">Normative di riferimento.</h2>
-      <p class="section-sub" style="color:rgba(255,255,255,0.55);">Le principali norme che regolano i settori in cui operiamo. Restiamo costantemente aggiornati per garantire la massima conformità.</p>
+      <p class="section-sub" style="color:rgba(255,255,255,0.55);">Le principali norme che regolano i settori in cui opero. Mi aggiorno costantemente per garantirti la massima conformità.</p>
       <div class="norme-grid">
         <div class="norma-card"><span class="norma-tag">Impianti</span><h4>DPR 462/01</h4><p>Verifica periodica di impianti elettrici, messa a terra e protezione scariche atmosferiche.</p></div>
         <div class="norma-card"><span class="norma-tag">Sicurezza</span><h4>D.Lgs. 81/08 — T.U. Sicurezza</h4><p>Testo Unico: DVR, formazione, RSPP, sorveglianza sanitaria e misure di prevenzione.</p></div>
         <div class="norma-card"><span class="norma-tag">Attrezzature</span><h4>All. VII — D.Lgs. 81/08</h4><p>Verifiche periodiche obbligatorie: gru, sollevatori, recipienti a pressione, ponteggi.</p></div>
         <div class="norma-card"><span class="norma-tag">Elettrico</span><h4>CEI 64-8 / CEI 11-27</h4><p>Progettazione e verifica impianti elettrici BT e lavori elettrici in sicurezza.</p></div>
         <div class="norma-card"><span class="norma-tag">Formazione</span><h4>Accordo Stato-Regioni 2011/2012</h4><p>Formazione obbligatoria lavoratori, preposti e dirigenti: durata, contenuti e aggiornamenti.</p></div>
-        <div class="norma-card"><span class="norma-tag">Antincendio</span><h4>D.M. 2 Settembre 2021</h4><p>Codice di Prevenzione Incendi: valutazione rischio, misure di prevenzione e piani di emergenza.</p></div>
+        <div class="norma-card"><span class="norma-tag">Antincendio</span><h4>D.M. 2 Settembre 2021</h4><p>Gestione della sicurezza antincendio in esercizio e in emergenza: piani di emergenza, addetti antincendio, controlli e manutenzione.</p></div>
       </div>
     </div>
   </section>
@@ -478,9 +512,10 @@
       <h2 class="section-title">Parliamo del tuo<br />progetto.</h2>
       <div class="contact-grid">
         <div class="contact-info">
-          <div class="contact-item"><div class="contact-item-icon">📍</div><div><div class="contact-item-label">Sede operativa</div><div class="contact-item-value">Fano (PU) — Marche, Italia</div></div></div>
+          <div class="contact-item"><div class="contact-item-icon">📍</div><div><div class="contact-item-label">Sede operativa</div><div class="contact-item-value">Fano (PU) — Marche, Italia</div>
+          <div class="footer-tagline footer-contacts"><a href="tel:+393388437747">+39 338 8437747</a><br /><a href="mailto:info@marcocurzi.it">info@marcocurzi.it</a><br /><a href="https://www.marcocurzi.it">www.marcocurzi.it</a></div></div></div>
           <div class="contact-item"><div class="contact-item-icon">✉️</div><div><div class="contact-item-label">Email</div><div class="contact-item-value"><a href="mailto:info@marcocurzi.it">info@marcocurzi.it</a></div></div></div>
-          <div class="contact-item"><div class="contact-item-icon">📞</div><div><div class="contact-item-label">Telefono / WhatsApp</div><div class="contact-item-value"><a href="tel:+39 338.38437747">+39 338 843 7747</a></div></div></div>
+          <div class="contact-item"><div class="contact-item-icon">📞</div><div><div class="contact-item-label">Telefono / WhatsApp</div><div class="contact-item-value"><a href="tel:+393388437747">+39 338 8437747</a></div></div></div>
           <div class="contact-item"><div class="contact-item-icon">🕐</div><div><div class="contact-item-label">Orari</div><div class="contact-item-value">Lun–Ven: 9:00 – 18:00</div></div></div>
         </div>
         <div class="form-wrap">
@@ -500,7 +535,7 @@
               <label for="servizio">Servizio di interesse *</label>
               <select id="servizio" name="servizio" required>
                 <option value="">— Seleziona un settore —</option>
-                <option value="verifiche">Verifiche Impianti ed Attrezzature</option>
+                <option value="verifiche">Verifiche Impianti, Attrezzature, DPI e Scaffalature</option>
                 <option value="formazione">Formazione Obbligatoria</option>
                 <option value="consulenza">Consulenza Strategica</option>
                 <option value="altro">Altro</option>
@@ -521,12 +556,17 @@
     </div>
   </section>
 
+  <a class="wa-float" href="https://wa.me/393388437747" target="_blank" rel="noopener" aria-label="Scrivimi su WhatsApp">
+    <span aria-hidden="true">&#128172;</span>
+    <span>WhatsApp</span>
+  </a>
   <footer>
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">
           <div class="footer-logo">Marco <span>Curzi</span></div>
-          <div class="footer-tagline">Consulenza tecnica e sicurezza aziendale.<br />Fano (PU) — Marche, Italia</div>
+          <div class="footer-tagline"><em style="font-style:italic;font-weight:500;color:rgba(255,255,255,0.7)">Ispezioni. Consulenze. Digital.</em><br />Fano (PU) — Marche, Italia</div>
+          <div class="footer-tagline footer-contacts"><a href="tel:+393388437747">+39 338 8437747</a><br /><a href="mailto:info@marcocurzi.it">info@marcocurzi.it</a><br /><a href="https://www.marcocurzi.it">www.marcocurzi.it</a></div>
           <div class="footer-social">
             <a href="https://www.linkedin.com/in/marco-curzi-sales" target="_blank" rel="noopener" aria-label="LinkedIn">
               <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452H17.21v-5.569c0-1.328-.027-3.037-1.852-3.037-1.854 0-2.137 1.446-2.137 2.941v5.665H9.982V9h3.12v1.561h.044c.435-.822 1.495-1.689 3.078-1.689 3.292 0 3.899 2.168 3.899 4.987v6.593zM5.337 7.433a1.81 1.81 0 1 1 0-3.621 1.81 1.81 0 0 1 0 3.621zM6.956 20.452H3.717V9h3.239v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.222 0z"/></svg>
@@ -557,7 +597,6 @@
               <li><a href="privacy-policy.html">Privacy Policy</a></li>
               <li><a href="cookie-policy.html">Cookie Policy</a></li>
             </ul>
-            <div style="font-size:0.75rem;color:rgba(255,255,255,0.25);margin-top:12px;">P.IVA 01234567890</div>
           </div>
         </div>
       </div>
@@ -583,7 +622,7 @@
       "postalCode": "61032",
       "addressCountry": "IT"
     },
-    "telephone": "+39-000-000-0000",
+    "telephone": "+39-338-8437747",
     "email": "info@marcocurzi.it",
     "openingHours": "Mo-Fr 09:00-18:00",
     "areaServed": "Marche, Italia",
@@ -609,5 +648,6 @@
       });
     })();
   </script>
+<script src="menu.js"></script>
 </body>
 </html>
